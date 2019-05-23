@@ -30,10 +30,10 @@ const BaseButton = (props) => {
 			color={buttonColor}
 			className={classes.rootBottomButton}
 			variant={buttonVariant}
-			onClick={(event) =>
-				(!!onClick && onClick(event)) ||
-				(!!route && history.push(route))
-			}
+			onClick={(event) => {
+				if (!!onClick) onClick(event, history)
+				return !!route && history.push(route)
+			}}
 			children={children}
 		/>
 	)

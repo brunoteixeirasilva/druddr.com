@@ -25,10 +25,12 @@ class ContactScene extends React.PureComponent {
 		mounted: false
 	}
 
-	setMounted(mounted = false) {
+	async setMounted(mounted = false) {
 		const self = this
 
 		self.setState({ mounted: mounted })
+
+		return Promise.resolve(self)
 	}
 
 	componentDidMount() {
@@ -44,112 +46,116 @@ class ContactScene extends React.PureComponent {
 		const { classes, match } = self.props
 
 		return (
-			<Slide
-				direction={!self.state.mounted ? 'down' : 'up'}
-				in={self.state.mounted}
-				// mountOnEnter
-				unmountOnExit
-			>
-				<SceneRoot color="secondary">
-					<div className={classes.root}>
-						<Typography
-							className={classes.invertedTextColors}
-							component="section"
-							variant="h2"
-						>
-							<b>React</b> Developer
-						</Typography>
-						<Typography
-							className={classes.invertedTextColors}
-							component="section"
-							variant="body1"
-						>
-							JavaScript(ing) since <b>2008</b>
-						</Typography>
-						<TextField
-							className={classes.invertedTextColors}
-							disabled
-							variant="outlined"
-							label="Skype"
-							id="skype"
-							aria-label="skype"
-							value="bruno.teixeira.silva"
-							InputProps={{
-								endAdornment: (
-									<InputAdornment position="end">
-										<IconButton
-											aria-label="Skype me"
-											onClick={(event) =>
-												(window.location.href =
-													'skype:bruno.teixeira.silva?call')
-											}
-										>
-											<VideocamIcon />
-										</IconButton>
-									</InputAdornment>
-								)
-							}}
-						/>
-						<TextField
-							className={classes.invertedTextColors}
-							disabled
-							variant="outlined"
-							label="Tel"
-							id="tel"
-							aria-label="Telefone"
-							value="+55 51 99338-1562"
-							InputProps={{
-								endAdornment: (
-									<InputAdornment position="end">
-										<IconButton
-											aria-label="Me ligue"
-											onClick={(event) =>
-												(window.location.href =
-													'tel:+5551993381562')
-											}
-										>
-											<LocalPhoneIcon />
-										</IconButton>
-									</InputAdornment>
-								)
-							}}
-						/>
-						<TextField
-							className={classes.invertedTextColors}
-							disabled
-							variant="outlined"
-							label="E-mail"
-							id="email"
-							aria-label="email"
-							value="bruno@druddr.com"
-							InputProps={{
-								endAdornment: (
-									<InputAdornment position="end">
-										<IconButton
-											aria-label="Me envie um e-mail"
-											onClick={(event) =>
-												(window.location.href =
-													'email:bruno@druddr.com')
-											}
-										>
-											<EmailIcon />
-										</IconButton>
-									</InputAdornment>
-								)
-							}}
-						/>
-					</div>
-					<CloseButton
-						buttonColor="primary"
-						onClick={(event) => {
-							self.setMounted(false)
+			<SceneRoot color="secondary">
+				<Slide
+					direction={'up'}
+					in={self.state.mounted}
+					// mountOnEnter
+					unmountOnExit
+				>
+					<React.Fragment>
+						<div className={classes.root}>
+							<Typography
+								className={classes.invertedTextColors}
+								component="section"
+								variant="h2"
+							>
+								<b>React</b> Developer
+							</Typography>
+							<Typography
+								className={classes.invertedTextColors}
+								component="section"
+								variant="body1"
+							>
+								JavaScript(ing) since <b>2008</b>
+							</Typography>
+							<TextField
+								className={classes.invertedTextColors}
+								disabled
+								variant="outlined"
+								label="Skype"
+								id="skype"
+								aria-label="skype"
+								value="bruno.teixeira.silva"
+								InputProps={{
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="Skype me"
+												onClick={(event) =>
+													(window.location.href =
+														'skype:bruno.teixeira.silva?call')
+												}
+											>
+												<VideocamIcon />
+											</IconButton>
+										</InputAdornment>
+									)
+								}}
+							/>
+							<TextField
+								className={classes.invertedTextColors}
+								disabled
+								variant="outlined"
+								label="Tel"
+								id="tel"
+								aria-label="Telefone"
+								value="+55 51 99338-1562"
+								InputProps={{
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="Me ligue"
+												onClick={(event) =>
+													(window.location.href =
+														'tel:+5551993381562')
+												}
+											>
+												<LocalPhoneIcon />
+											</IconButton>
+										</InputAdornment>
+									)
+								}}
+							/>
+							<TextField
+								className={classes.invertedTextColors}
+								disabled
+								variant="outlined"
+								label="E-mail"
+								id="email"
+								aria-label="email"
+								value="bruno@druddr.com"
+								InputProps={{
+									endAdornment: (
+										<InputAdornment position="end">
+											<IconButton
+												aria-label="Me envie um e-mail"
+												onClick={(event) =>
+													(window.location.href =
+														'email:bruno@druddr.com')
+												}
+											>
+												<EmailIcon />
+											</IconButton>
+										</InputAdornment>
+									)
+								}}
+							/>
+						</div>
+						<CloseButton
+							buttonColor="primary"
+							onClick={async (event, history) => {
+								self.setMounted(false).then((s) => {
+									return history.push(routes.index)
+								})
 
-							// return history.push(routes.index)
-						}}
-						route={routes.index}
-					/>
-				</SceneRoot>
-			</Slide>
+								return false
+							}}
+							//route={routes.index}
+						/>
+					</React.Fragment>
+				</Slide>
+			</SceneRoot>
 		)
 	}
 }

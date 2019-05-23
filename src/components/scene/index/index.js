@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import classNames from 'classnames'
 
-import { Grid, withStyles, Fab } from '@material-ui/core'
+import { Grid, withStyles, Fab, Slide } from '@material-ui/core'
 import BuildIcon from '@material-ui/icons/BuildRounded'
 import ExtensionIcon from '@material-ui/icons/ExtensionRounded'
 import FlightTakeoffIcon from '@material-ui/icons/FlightTakeoffRounded'
@@ -28,30 +28,32 @@ class IndexScene extends React.PureComponent {
 		const { classes, history, width } = this.props
 
 		return (
-			<SceneRoot>
-				<Grid
-					container
-					className={classNames(classes.grid, {
-						wide: isWidthUp('sm', width, true)
-					})}
-				>
-					<LandingIcon
-						Component={BuildIcon}
-						label={'label/we-build'}
-					/>
-					<RightArrowIcon />
-					<LandingIcon
-						Component={ExtensionIcon}
-						label={'label/we-progress'}
-					/>
-					<RightArrowIcon />
-					<LandingIcon
-						Component={FlightTakeoffIcon}
-						label={'label/we-takeoff'}
-					/>
-				</Grid>
-				<PlayButton route={routes.contact} />
-			</SceneRoot>
+			<Slide direction="down" in={true}>
+				<SceneRoot>
+					<Grid
+						container
+						className={classNames(classes.grid, {
+							wide: isWidthUp('sm', width, true)
+						})}
+					>
+						<LandingIcon
+							Component={BuildIcon}
+							label={'label/we-build'}
+						/>
+						<RightArrowIcon />
+						<LandingIcon
+							Component={ExtensionIcon}
+							label={'label/we-progress'}
+						/>
+						<RightArrowIcon />
+						<LandingIcon
+							Component={FlightTakeoffIcon}
+							label={'label/we-takeoff'}
+						/>
+					</Grid>
+					<PlayButton route={routes.contact} />
+				</SceneRoot>
+			</Slide>
 		)
 	}
 }

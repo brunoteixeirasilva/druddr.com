@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Grid, withStyles, Typography } from '@material-ui/core'
+import { Grid, withStyles, Typography, Slide } from '@material-ui/core'
 import ExploreOffIcon from '@material-ui/icons/ExploreOffRounded'
 
 import styles from './styles'
@@ -20,18 +20,23 @@ class NotFoundScene extends React.PureComponent {
 		const { classes } = this.props
 
 		return (
-			<SceneRoot>
-				<Grid container className={classes.grid}>
-					<LandingIcon color="secondary" Component={ExploreOffIcon} />
-					<Typography color="secondary" variant="h2">
-						<b>4</b> 0<b>4</b>
-					</Typography>
-					<Typography color="secondary" variant="button">
-						Não encontrado..
-					</Typography>
-				</Grid>
-				<CloseButton route={routes.index} />
-			</SceneRoot>
+			<Slide direction="right" in={true}>
+				<SceneRoot>
+					<Grid container className={classes.grid}>
+						<LandingIcon
+							color="secondary"
+							Component={ExploreOffIcon}
+						/>
+						<Typography color="secondary" variant="h2">
+							<b>4</b> 0<b>4</b>
+						</Typography>
+						<Typography color="secondary" variant="button">
+							Não encontrado..
+						</Typography>
+					</Grid>
+					<CloseButton route={routes.index} />
+				</SceneRoot>
+			</Slide>
 		)
 	}
 }
