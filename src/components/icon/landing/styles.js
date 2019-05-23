@@ -28,6 +28,12 @@ const styles = (theme) => ({
 			transform: 'rotate(-15deg)',
 			color: lightBlue[400]
 		},
+		'&.colorPrimary': {
+			color: theme.palette.primary.main
+		},
+		'&.colorSecondary': {
+			color: theme.palette.secondary.main
+		},
 		...getIconSizesObject(true)
 	},
 	iconCaption: {

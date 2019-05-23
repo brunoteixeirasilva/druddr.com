@@ -16,9 +16,11 @@ import { compose } from 'recompose'
  */
 class LandingIcon extends React.PureComponent {
 	render() {
-		const { classes, Component, label, width } = this.props
+		const { classes, color, Component, label, width } = this.props
 		const iconProps = {
 			className: classNames(classes.icon, {
+				colorPrimary: !!color && color === 'primary',
+				colorSecondary: !!color && color === 'secondary',
 				iconSize56: isWidthDown('sm', width, false),
 				iconSize128: isWidthUp('sm', width, true)
 			})
@@ -31,17 +33,20 @@ class LandingIcon extends React.PureComponent {
 				) : (
 					<Component {...iconProps} />
 				)}
-				<Chip
-					label={translate(label)}
-					className={classes.iconCaption}
-					variant="outlined"
-				/>
+				{!!label && (
+					<Chip
+						label={translate(label)}
+						className={classes.iconCaption}
+						variant="outlined"
+					/>
+				)}
 			</Grid>
 		)
 	}
 }
 
 LandingIcon.propTypes = {
+	color: PropTypes.oneOf([null, 'primary', 'secondary']),
 	Component: PropTypes.oneOfType([
 		PropTypes.node,
 		PropTypes.element,
