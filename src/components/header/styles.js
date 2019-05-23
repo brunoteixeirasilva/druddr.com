@@ -1,11 +1,18 @@
 import lightBlue from '@material-ui/core/colors/lightBlue'
+import grey from '@material-ui/core/colors/grey'
 
 const styles = (theme) => ({
 	root: {
-		backgroundColor: 'transparent',
+		transition: 'color 800ms, background-color 800ms',
+		backgroundColor: '#FFFFFF',
 		color: lightBlue[700],
 		boxShadow: 'unset'
-		// backgroundColor: lightBlue[400]
+	},
+	rootSecondary: {
+		transition: 'color 500ms',
+		backgroundColor: 'transparent',
+		color: grey[200],
+		boxShadow: 'unset'
 	},
 	title: {
 		marginLeft: theme.spacing.unit * 2,

@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid, withStyles, Typography } from '@material-ui/core'
-import BuildIcon from '@material-ui/icons/BuildRounded'
-import ExtensionIcon from '@material-ui/icons/ExtensionRounded'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAltRounded'
-import FlightTakeoffIcon from '@material-ui/icons/FlightTakeoffRounded'
-
-import styles from './styles'
-import { translate } from '../../utils/lang'
+import { Switch, Route } from 'react-router-dom'
+import IndexScene from '../scene/index'
+import ContactScene from '../scene/contact'
+import routes from '../../utils/routes/routes'
 
 /**
  * Manages to display a centered info panel
@@ -16,62 +12,18 @@ import { translate } from '../../utils/lang'
  * @author brunoteixeirasilva
  * @version 1.0
  */
-class BodyContainer extends Component {
-	render() {
-		const { classes } = this.props
-
-		return (
-			<Grid
-				container
-				className={classes.root}
-				alignItems="center"
-				justify="center"
-				spacing={16}
-			>
-				<Grid item>
-					<BuildIcon className={classes.icon} />
-					<Typography
-						className={classes.iconCaption}
-						variant="caption"
-					>
-						{translate('label/we-build')}
-					</Typography>
-				</Grid>
-
-				<Grid item>
-					<ArrowRightAltIcon className={classes.inter} />
-				</Grid>
-
-				<Grid item>
-					<ExtensionIcon className={classes.icon} />
-					<Typography
-						className={classes.iconCaption}
-						variant="caption"
-					>
-						{translate('label/we-progress')}
-					</Typography>
-				</Grid>
-
-				<Grid item>
-					<ArrowRightAltIcon className={classes.inter} />
-				</Grid>
-
-				<Grid item>
-					<FlightTakeoffIcon className={classes.icon} />
-					<Typography
-						className={classes.iconCaption}
-						variant="caption"
-					>
-						{translate('label/we-takeoff')}
-					</Typography>
-				</Grid>
-			</Grid>
-		)
-	}
+const BodyContainer = () => {
+	return (
+		<Switch>
+			<Route exact path={routes.index} component={IndexScene} />
+			<Route exact path={routes.contact} component={ContactScene} />
+			{/* <Route component={NotFoundScene} /> */}
+		</Switch>
+	)
 }
 
 BodyContainer.propTypes = {
 	children: PropTypes.node
 }
 
-export default withStyles(styles)(BodyContainer)
+export default BodyContainer

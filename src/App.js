@@ -1,30 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import logo from './logo.svg'
 import './App.css'
+import { withRouter } from 'react-router-dom'
 import HeaderContainer from './components/header'
+import { BrowserRouter as Router } from 'react-router-dom'
 import BodyContainer from './components/content'
+import theme from './components/util/theme'
+import { MuiThemeProvider } from '@material-ui/core'
+import routes from './utils/routes/routes'
 
-class App extends Component {
+/**
+ * @description Created the component
+ * @author brunoteixeirasilva
+ * @version 1.0
+ */
+class App extends React.Component {
 	render() {
 		return (
-			<div className="App">
-				<HeaderContainer />
-				<BodyContainer />
-				{/* <header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-						Edit <code>src/App.js</code> and save to reload.
-					</p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-				</header> */}
-			</div>
+			<MuiThemeProvider theme={theme}>
+				<div className="App">
+					<HeaderContainer color="primary" />
+					<Router>
+						<BodyContainer />
+					</Router>
+				</div>
+			</MuiThemeProvider>
 		)
 	}
 }

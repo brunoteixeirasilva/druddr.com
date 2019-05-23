@@ -1,12 +1,6 @@
 import React from 'react'
-import {
-	AppBar,
-	Toolbar,
-	IconButton,
-	Typography,
-	withStyles
-} from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
+import PropTypes from 'prop-types'
+import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core'
 import { translate } from '../../utils/lang'
 import styles from './styles'
 
@@ -17,23 +11,22 @@ import styles from './styles'
  * @author brunoteixeirasilva
  * @version 1.0
  */
-class HeaderContainer extends React.Component {
+class HeaderContainer extends React.PureComponent {
 	render() {
-		const { classes } = this.props
+		const { classes, color } = this.props
 
 		return (
-			<AppBar className={classes.root} position="sticky">
+			<AppBar
+				className={
+					color === 'primary' ? classes.root : classes.rootSecondary
+				}
+				position="sticky"
+			>
 				<Toolbar>
-					{/* <IconButton
-						color="inherit"
-						aria-label={translate('label/open-menu')}
-					>
-						<MenuIcon />
-					</IconButton> */}
 					<Typography
 						className={classes.title}
 						color="inherit"
-						variant="headline"
+						variant="h5"
 					>
 						{translate('title/app')}
 					</Typography>
@@ -41,6 +34,15 @@ class HeaderContainer extends React.Component {
 			</AppBar>
 		)
 	}
+}
+
+HeaderContainer.defaultProps = {
+	color: 'primary'
+}
+
+HeaderContainer.propTypes = {
+	classes: PropTypes.object.isRequired,
+	color: PropTypes.oneOf(['primary', 'secondary'])
 }
 
 export default withStyles(styles)(HeaderContainer)
