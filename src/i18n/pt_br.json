@@ -1,7 +1,20 @@
 {
+	"author/phone-number-call": "Me ligue!",
+	"author/e-mail-call": "Me envie um e-mail!",
+	"author/skype-call": "Skype me!",
+	"author/phone-number": "+55 51 99338-1562",
+	"author/e-mail": "bruno@druddr.com",
+	"author/skype-address": "bruno.teixeira.silva",
+	"author/phone-number-href": "tel:+5551993381562",
+	"author/e-mail-href": "mailto:bruno@druddr.com",
+	"author/skype-address-href": "skype:bruno.teixeira.silva?call",
 	"label/open-menu": "Abrir menu",
 	"label/we-build": "Construir",
 	"label/we-progress": "Progredir",
 	"label/we-takeoff": "Decolar",
-	"title/app": "Druddr"
+	"label/wrong-way": "Abrir menu",
+	"label/not-found": "Não encontrado",
+	"label/empty": "",
+	"title/app": "Druddr",
+	"title/author": "Bruno Teixeira"
 }

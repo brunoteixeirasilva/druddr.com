@@ -15,6 +15,12 @@ const styles = (theme) => ({
 			flex: '0 0 auto',
 			margin: theme.spacing.unit / 2
 		}
+	},
+	slide: {
+		transitionTimingFunction: 'ease-out',
+		'&.out': {
+			transitionTimingFunction: 'ease-in'
+		}
 	}
 })
 

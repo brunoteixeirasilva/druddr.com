@@ -1,5 +1,6 @@
 const styles = (theme) => ({
 	root: {
+		transition: 'background-color linear 300ms',
 		display: 'flex',
 		flexDirection: 'column',
 		justifyContent: 'center',

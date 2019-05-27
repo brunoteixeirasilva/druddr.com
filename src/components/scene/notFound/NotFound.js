@@ -9,6 +9,7 @@ import routes from '../../../utils/routes/routes'
 import SceneRoot from '../root'
 import { CloseButton } from '../../button'
 import LandingIcon from '../../icon/landing'
+import { translate } from '../../../utils/lang'
 
 /**
  * @description Created the component
@@ -24,6 +25,8 @@ class NotFoundScene extends React.PureComponent {
 				<SceneRoot>
 					<Grid container className={classes.grid}>
 						<LandingIcon
+							label="label/wrong-way"
+							hideLabel
 							color="secondary"
 							Component={ExploreOffIcon}
 						/>
@@ -31,7 +34,7 @@ class NotFoundScene extends React.PureComponent {
 							<b>4</b> 0<b>4</b>
 						</Typography>
 						<Typography color="secondary" variant="button">
-							Não encontrado..
+							{translate('label/not-found')}..
 						</Typography>
 					</Grid>
 					<CloseButton route={routes.index} />

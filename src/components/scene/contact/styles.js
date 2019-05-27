@@ -1,3 +1,5 @@
+import { grey } from '@material-ui/core/colors'
+
 const styles = (theme) => ({
 	root: {
 		display: 'flex',
@@ -23,6 +25,18 @@ const styles = (theme) => ({
 		}
 		// borderColor: `${theme.palette.secondary.contrastText} !important`
 		// borderColor: theme.palette.secondary.contrastText,
+	},
+	textButton: {
+		marginLeft: theme.spacing.unit / 4,
+		marginRight: theme.spacing.unit / 4,
+		paddingLeft: theme.spacing.unit / 2,
+		paddingRight: theme.spacing.unit / 2
+	},
+	slide: {
+		transitionTimingFunction: 'ease-out',
+		'&.out': {
+			transitionTimingFunction: 'ease-in'
+		}
 	}
 })
 

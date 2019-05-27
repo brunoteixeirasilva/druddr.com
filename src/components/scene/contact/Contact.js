@@ -7,13 +7,16 @@ import {
 	IconButton,
 	TextField,
 	Slide,
-	Typography
+	Typography,
+	Button
 } from '@material-ui/core'
 import LocalPhoneIcon from '@material-ui/icons/LocalPhoneRounded'
 import VideocamIcon from '@material-ui/icons/VideocamRounded'
 import EmailIcon from '@material-ui/icons/EmailRounded'
 import styles from './styles'
 import { CloseButton } from '../../button'
+import classNames from 'classnames'
+import { translate } from '../../../utils/lang'
 
 /**
  * @description Created the component
@@ -52,6 +55,9 @@ class ContactScene extends React.PureComponent {
 					in={self.state.mounted}
 					// mountOnEnter
 					unmountOnExit
+					className={classNames(classes.slide, {
+						[classes.out]: !self.state.mounted
+					})}
 				>
 					<React.Fragment>
 						<div className={classes.root}>
@@ -76,15 +82,18 @@ class ContactScene extends React.PureComponent {
 								label="Skype"
 								id="skype"
 								aria-label="skype"
-								value="bruno.teixeira.silva"
+								value={translate('author/skype-address')}
 								InputProps={{
 									endAdornment: (
 										<InputAdornment position="end">
 											<IconButton
-												aria-label="Skype me"
+												aria-label={translate(
+													'author/skype-call'
+												)}
 												onClick={(event) =>
-													(window.location.href =
-														'skype:bruno.teixeira.silva?call')
+													(window.location.href = translate(
+														'author/skype-address-href'
+													))
 												}
 											>
 												<VideocamIcon />
@@ -100,15 +109,18 @@ class ContactScene extends React.PureComponent {
 								label="Tel"
 								id="tel"
 								aria-label="Telefone"
-								value="+55 51 99338-1562"
+								value={translate('author/phone-number')}
 								InputProps={{
 									endAdornment: (
 										<InputAdornment position="end">
 											<IconButton
-												aria-label="Me ligue"
+												aria-label={translate(
+													'author/phone-number-call'
+												)}
 												onClick={(event) =>
-													(window.location.href =
-														'tel:+5551993381562')
+													(window.location.href = translate(
+														'author/phone-number-href'
+													))
 												}
 											>
 												<LocalPhoneIcon />
@@ -124,15 +136,18 @@ class ContactScene extends React.PureComponent {
 								label="E-mail"
 								id="email"
 								aria-label="email"
-								value="bruno@druddr.com"
+								value={translate('author/e-mail')}
 								InputProps={{
 									endAdornment: (
 										<InputAdornment position="end">
 											<IconButton
-												aria-label="Me envie um e-mail"
+												aria-label={translate(
+													'author/e-mail-call'
+												)}
 												onClick={(event) =>
-													(window.location.href =
-														'email:bruno@druddr.com')
+													(window.location.href = translate(
+														'author/e-mail-href'
+													))
 												}
 											>
 												<EmailIcon />
@@ -141,20 +156,42 @@ class ContactScene extends React.PureComponent {
 									)
 								}}
 							/>
+							<Typography
+								className={classes.invertedTextColors}
+								component="section"
+								variant="body1"
+							>
+								<b>Powered</b> by
+								<Button
+									aria-label={translate('title/author')}
+									className={classNames(
+										classes.textButton,
+										classes.invertedTextColors
+									)}
+									variant="text"
+									component="b"
+									onClick={
+										(event) => false
+										// (window.location.href =
+										// 	'https://fb.me/bruno.teixeiradasilva')
+									}
+								>
+									{translate('title/author')}
+								</Button>
+							</Typography>
 						</div>
-						<CloseButton
-							buttonColor="primary"
-							onClick={async (event, history) => {
-								self.setMounted(false).then((s) => {
-									return history.push(routes.index)
-								})
-
-								return false
-							}}
-							//route={routes.index}
-						/>
 					</React.Fragment>
 				</Slide>
+				<CloseButton
+					buttonColor="primary"
+					onClick={async (event, history) => {
+						self.setMounted(false).then((s) => {
+							return history.push(routes.index)
+						})
+
+						return false
+					}}
+				/>
 			</SceneRoot>
 		)
 	}

@@ -16,8 +16,19 @@ import { compose } from 'recompose'
  */
 class LandingIcon extends React.PureComponent {
 	render() {
-		const { classes, color, Component, label, width } = this.props
+		const {
+			arialabel,
+			classes,
+			color,
+			Component,
+			label,
+			width,
+			hideLabel
+		} = this.props
+		const translatedLabel = translate(label || arialabel || 'label/empty')
 		const iconProps = {
+			label: translatedLabel,
+			arialabel: translatedLabel,
 			className: classNames(classes.icon, {
 				colorPrimary: !!color && color === 'primary',
 				colorSecondary: !!color && color === 'secondary',
@@ -33,9 +44,10 @@ class LandingIcon extends React.PureComponent {
 				) : (
 					<Component {...iconProps} />
 				)}
-				{!!label && (
+				{!hideLabel && !!translatedLabel && (
 					<Chip
-						label={translate(label)}
+						arialabel={translatedLabel}
+						label={translatedLabel}
 						className={classes.iconCaption}
 						variant="outlined"
 					/>
@@ -45,6 +57,10 @@ class LandingIcon extends React.PureComponent {
 	}
 }
 
+LandingIcon.defaultProps = {
+	hideLabel: false
+}
+
 LandingIcon.propTypes = {
 	color: PropTypes.oneOf([null, 'primary', 'secondary']),
 	Component: PropTypes.oneOfType([
@@ -52,6 +68,7 @@ LandingIcon.propTypes = {
 		PropTypes.element,
 		PropTypes.func
 	]),
+	hideLabel: PropTypes.bool,
 	label: PropTypes.string
 }
 

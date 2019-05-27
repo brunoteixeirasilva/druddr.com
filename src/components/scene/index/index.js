@@ -24,11 +24,33 @@ import PlayButton from '../../button/play/PlayButton'
  * @version 1.0
  */
 class IndexScene extends React.PureComponent {
+	state = {
+		mounted: false
+	}
+
+	componentDidMount() {
+		this.setMounted(true)
+	}
+
+	componentWillUnmount() {
+		this.setMounted(false)
+	}
+
+	async setMounted(mounted) {
+		this.setState({ mounted })
+	}
+
 	render() {
 		const { classes, history, width } = this.props
 
 		return (
-			<Slide direction="down" in={true}>
+			<Slide
+				direction="down"
+				in={this.state.mounted}
+				className={classNames(classes.slide, {
+					[classes.out]: !this.state.mounted
+				})}
+			>
 				<SceneRoot>
 					<Grid
 						container
