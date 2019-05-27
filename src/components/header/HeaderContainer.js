@@ -1,8 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core'
+import { withRouter } from 'react-router-dom'
+import {
+	AppBar,
+	Toolbar,
+	Typography,
+	withStyles,
+	IconButton
+} from '@material-ui/core'
 import { translate } from '../../utils/lang'
 import styles from './styles'
+import InstagramIcon from '../icon/instagram'
+import routes from '../../utils/routes/routes'
+import { compose } from 'recompose'
+import Pop from '../util/tooltip'
 
 /**
  * Manages to display a header for the app
@@ -10,10 +21,27 @@ import styles from './styles'
  * @description Created the component
  * @author brunoteixeirasilva
  * @version 1.0
+ *
+ * @description Added the handleClick fn
+ * @author brunoteixeirasilva
+ * @version 1.1
+ *
  */
 class HeaderContainer extends React.PureComponent {
+	async handleClick(event, address) {
+		//Will redirect user to the instagram direction
+		if (window) window.location.href = address
+	}
+
 	render() {
-		const { classes, color } = this.props
+		const instagramUser = translate('author/instagram-address'),
+			instagramAddress = `https://instagr.am/${instagramUser}`,
+			labels = {
+				instagramButton: translate('label/aria/instagram-link', {
+					address: instagramUser
+				})
+			},
+			{ classes, color, history } = this.props
 
 		return (
 			<AppBar
@@ -22,14 +50,27 @@ class HeaderContainer extends React.PureComponent {
 				}
 				position="sticky"
 			>
-				<Toolbar>
+				<Toolbar className={classes.flex}>
 					<Typography
+						onClick={(event) => history.push(routes.index)}
 						className={classes.title}
 						color="inherit"
 						variant="h5"
 					>
 						{translate('title/app')}
 					</Typography>
+					<Pop placement="bottom-end" label={labels.instagramButton}>
+						<IconButton
+							aria-label={labels.instagramButton}
+							target="_blank"
+							onClick={(event) =>
+								this.handleClick(event, instagramAddress)
+							}
+							className={classes.button}
+						>
+							<InstagramIcon />
+						</IconButton>
+					</Pop>
 				</Toolbar>
 			</AppBar>
 		)
@@ -45,4 +86,7 @@ HeaderContainer.propTypes = {
 	color: PropTypes.oneOf(['primary', 'secondary'])
 }
 
-export default withStyles(styles)(HeaderContainer)
+export default compose(
+	withRouter,
+	withStyles(styles)
+)(HeaderContainer)

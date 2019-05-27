@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/core'
 import styles from './styles'
 import BaseButton from '../BaseButton'
 import ClearIcon from '@material-ui/icons/ClearRounded'
+import Pop from '../../util/tooltip'
+import { translate } from '../../../utils/lang'
 
 /**
  * Standardizes FAB close-button
@@ -14,16 +16,19 @@ import ClearIcon from '@material-ui/icons/ClearRounded'
  * @param {Object} props
  */
 const CloseButton = (props) => {
-	const { classes, buttonColor, onClick, route } = props
+	const { classes, buttonColor, onClick, route } = props,
+		label = translate('label/close')
 
 	return (
-		<BaseButton
-			buttonColor={buttonColor}
-			buttonVariant="round"
-			route={route}
-			onClick={onClick}
-			icon={<ClearIcon />}
-		/>
+		<Pop aria-label={label} label={label} placement="top-end">
+			<BaseButton
+				buttonColor={buttonColor}
+				buttonVariant="round"
+				route={route}
+				onClick={onClick}
+				icon={<ClearIcon />}
+			/>
+		</Pop>
 	)
 }
 

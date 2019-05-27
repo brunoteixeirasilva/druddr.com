@@ -14,10 +14,24 @@ const styles = (theme) => ({
 		color: grey[200],
 		boxShadow: 'unset'
 	},
+	flex: {
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'flex-start',
+		'& > *': {
+			flex: '0 0 auto'
+		}
+	},
+	button: {
+		marginLeft: 'auto',
+		justifySelf: 'flex-end'
+	},
 	title: {
 		marginLeft: theme.spacing.unit * 2,
 		fontWeight: 500,
-		textTransform: 'uppercase'
+		textTransform: 'uppercase',
+		cursor: 'pointer'
 	}
 })
 

@@ -19,8 +19,8 @@ class App extends React.Component {
 		return (
 			<MuiThemeProvider theme={theme}>
 				<div className="App">
-					<HeaderContainer color="primary" />
 					<Router>
+						<HeaderContainer color="primary" />
 						<BodyContainer />
 					</Router>
 				</div>
