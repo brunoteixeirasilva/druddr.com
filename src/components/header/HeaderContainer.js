@@ -59,18 +59,22 @@ class HeaderContainer extends React.PureComponent {
 					>
 						{translate('title/app')}
 					</Typography>
-					<Pop placement="bottom-end" label={labels.instagramButton}>
-						<IconButton
-							aria-label={labels.instagramButton}
-							target="_blank"
-							onClick={(event) =>
-								this.handleClick(event, instagramAddress)
-							}
-							className={classes.button}
-						>
-							<InstagramIcon />
-						</IconButton>
-					</Pop>
+					<Pop
+						placement="bottom-end"
+						label={labels.instagramButton}
+						children={
+							<IconButton
+								aria-label={labels.instagramButton}
+								target="_blank"
+								onClick={(event) =>
+									this.handleClick(event, instagramAddress)
+								}
+								className={classes.button}
+							>
+								<InstagramIcon />
+							</IconButton>
+						}
+					/>
 				</Toolbar>
 			</AppBar>
 		)

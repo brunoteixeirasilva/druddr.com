@@ -1,4 +1,11 @@
-const langDoc = require('../../i18n/pt_br.json')
+import {
+	loadLanguageFile,
+	translate as t,
+	tryTranslate as tt
+} from '@druddr/translate'
+
+// Pre-loading language file (must be within scopes)
+loadLanguageFile(require('../../i18n/pt_br.json'))
 
 /**
  * Exposes the passed key (with our w/o params) as a text message; if
@@ -12,22 +19,7 @@ const langDoc = require('../../i18n/pt_br.json')
  * E.g. { userName: 'John' } will look for a prop written as "${userName}"
  */
 function translate(key, params = null) {
-	let result = langDoc[key]
-
-	if (!result)
-		throw Error(
-			`Language item with key => "${key}" was not found in lang (i18n) file`
-		)
-
-	if (params)
-		Object.keys(params).forEach((param) => {
-			result =
-				result.indexOf(param) > -1
-					? result.replace('${' + param + '}', `${params[param]}`)
-					: result
-		})
-
-	return result
+	return t(key, params)
 }
 
 /**
@@ -43,20 +35,7 @@ function translate(key, params = null) {
  * @param {Boolean} exposeException Will expose (rethrow an error) if =>true, encapsulate if =>false
  */
 function tryTranslate(key, params = null, exposeException = false) {
-	let result = false
-
-	try {
-		result = translate(key, params)
-	} catch (ex) {
-		//Error was set to be exposed
-		//Rethrows the error
-		if (!!exposeException) throw ex
-	}
-
-	//In the case the error shouldn't be exposed
-	//Or successfully found
-	//Will return the resultant extent
-	return result
+	return tt(key, params, exposeException)
 }
 
 export { translate, tryTranslate }

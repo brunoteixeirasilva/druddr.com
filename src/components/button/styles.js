@@ -1,8 +1,8 @@
 const styles = (theme) => ({
 	rootBottomButton: {
 		position: 'fixed',
-		bottom: theme.spacing.unit,
-		right: theme.spacing.unit,
+		bottom: theme.spacing(1),
+		right: theme.spacing(1),
 		background: theme.palette.primary.dark,
 		color: theme.palette.primary.light,
 		'&:hover': {

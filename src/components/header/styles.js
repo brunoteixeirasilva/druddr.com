@@ -28,7 +28,7 @@ const styles = (theme) => ({
 		justifySelf: 'flex-end'
 	},
 	title: {
-		marginLeft: theme.spacing.unit * 2,
+		marginLeft: theme.spacing(2),
 		fontWeight: 500,
 		textTransform: 'uppercase',
 		cursor: 'pointer'

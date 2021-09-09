@@ -19,7 +19,9 @@ class Pop extends React.PureComponent {
 				TransitionComponent={Fade}
 				placement={placement}
 				title={label}
-				children={children}
+				children={React.forwardRef((props, ref) =>
+					React.cloneElement(children, { ref: ref })
+				)}
 			/>
 		)
 	}

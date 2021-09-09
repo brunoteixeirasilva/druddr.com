@@ -15,21 +15,29 @@ import { translate } from '../../../utils/lang'
  *
  * @param {Object} props
  */
-const CloseButton = (props) => {
-	const { classes, buttonColor, onClick, route } = props,
-		label = translate('label/close')
+class CloseButton extends React.Component {
+	render() {
+		const { classes, buttonColor, onClick, route } = this.props,
+			label = translate('label/close')
 
-	return (
-		<Pop aria-label={label} label={label} placement="top-end">
-			<BaseButton
-				buttonColor={buttonColor}
-				buttonVariant="round"
-				route={route}
-				onClick={onClick}
-				icon={<ClearIcon />}
+		return (
+			<Pop
+				aria-label={label}
+				label={label}
+				placement="top-end"
+				children={
+					<BaseButton
+						// ref={ref}
+						buttonColor={buttonColor}
+						buttonVariant="round"
+						route={route}
+						onClick={onClick}
+						icon={<ClearIcon />}
+					/>
+				}
 			/>
-		</Pop>
-	)
+		)
+	}
 }
 
 CloseButton.defaultProps = {

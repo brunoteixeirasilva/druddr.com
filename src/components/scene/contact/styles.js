@@ -8,11 +8,11 @@ const styles = (theme) => ({
 		justifyContent: 'center',
 		'& > *': {
 			flex: '0 0 auto',
-			marginTop: theme.spacing.unit,
-			margin: theme.spacing.unit / 2
+			marginTop: theme.spacing(1),
+			margin: theme.spacing(0.5)
 		},
 		'& > section': {
-			marginBottom: theme.spacing.unit * 3
+			marginBottom: theme.spacing(3)
 		}
 	},
 	invertedTextColors: {
@@ -27,10 +27,10 @@ const styles = (theme) => ({
 		// borderColor: theme.palette.secondary.contrastText,
 	},
 	textButton: {
-		marginLeft: theme.spacing.unit / 4,
-		marginRight: theme.spacing.unit / 4,
-		paddingLeft: theme.spacing.unit / 2,
-		paddingRight: theme.spacing.unit / 2
+		marginLeft: theme.spacing(0.25),
+		marginRight: theme.spacing(0.25),
+		paddingLeft: theme.spacing(0.5),
+		paddingRight: theme.spacing(0.5)
 	},
 	slide: {
 		transitionTimingFunction: 'ease-out',

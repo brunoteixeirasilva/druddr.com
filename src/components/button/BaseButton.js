@@ -12,31 +12,34 @@ import styles from './styles'
  * @author brunoteixeirasilva
  * @version 1.0
  */
-const BaseButton = (props) => {
-	const {
-		classes,
-		buttonColor,
-		buttonVariant,
-		history,
-		onClick,
-		route
-	} = props
-	const children = props.icon || props.children
-	// ! will be used for counting clicks on-a-run
-	// const buttonData = useState(null)
+class BaseButton extends React.Component {
+	render() {
+		const {
+			classes,
+			buttonColor,
+			buttonVariant,
+			history,
+			onClick,
+			route
+		} = this.props
+		const children = this.props.icon || this.props.children
+		// ! will be used for counting clicks on-a-run
+		// const buttonData = useState(null)
 
-	return (
-		<Fab
-			color={buttonColor}
-			className={classes.rootBottomButton}
-			variant={buttonVariant}
-			onClick={(event) => {
-				if (!!onClick) onClick(event, history)
-				return !!route && history.push(route)
-			}}
-			children={children}
-		/>
-	)
+		return (
+			<Fab
+				color={buttonColor}
+				className={classes.rootBottomButton}
+				variant={buttonVariant}
+				onClick={(event) => {
+					if (!!onClick) onClick(event, history)
+					return !!route && history.push(route)
+				}}
+				// ref={ref}
+				children={children}
+			/>
+		)
+	}
 }
 
 BaseButton.defaultProps = {

@@ -1,0 +1,15 @@
+body {
+	font-size: 0.625em;
+}
+
+.box {
+	border-radius: 5px;
+	padding: 4px;
+	margin: 8px;
+}
+
+.padded-first tr td:first {
+	width: 4em;
+	margin-left: 0;
+	margin-right: 4px;
+}

@@ -7,9 +7,7 @@ const theme = createMuiTheme({
 		primary: blue,
 		secondary: brown
 	},
-	typography: {
-		useNextVariants: true
-	}
+	typography: {}
 })
 
 export default theme

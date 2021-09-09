@@ -7,13 +7,13 @@ const styles = (theme) => ({
 		'&.wide': {
 			flexDirection: 'row',
 			'& > *': {
-				marginLeft: theme.spacing.unit,
-				marginRight: theme.spacing.unit
+				marginLeft: theme.spacing(1),
+				marginRight: theme.spacing(1)
 			}
 		},
 		'& > *': {
 			flex: '0 0 auto',
-			margin: theme.spacing.unit / 2
+			margin: theme.spacing(0.5)
 		}
 	},
 	slide: {

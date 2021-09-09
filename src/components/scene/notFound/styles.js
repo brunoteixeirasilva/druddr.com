@@ -6,7 +6,7 @@ const styles = (theme) => ({
 		alignItems: 'center',
 		'& > *': {
 			flex: '0 0 auto',
-			margin: theme.spacing.unit / 2
+			margin: theme.spacing(0.5)
 		}
 	}
 })

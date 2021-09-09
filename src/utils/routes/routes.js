@@ -1,6 +1,7 @@
 const routes = {
 	index: '/',
-	contact: '/contact'
+	contact: '/contact',
+	doc: '/doc/:documentId(\\w*)'
 }
 
 export default routes
