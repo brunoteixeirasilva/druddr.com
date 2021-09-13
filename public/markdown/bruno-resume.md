@@ -1,12 +1,8 @@
 # Bruno Teixeira da Silva
 
-Aged 26.
-
-Located @ 299 Epifanio Fogaca street, Sao Leopoldo, RS, BR
-
 E-mail: bruno.teixeira.silva@gmail.com
 
-Phone: +55 51 993381562
+Phone: +598 92 987 727
 
 <div class="box"><i>Intelligence is the ability to adapt to change. (Stephen Hawking)</i></div>
 

@@ -5,31 +5,34 @@ import { Tooltip, Fade } from '@material-ui/core'
 /**
  * Standardised tooltip utility
  *
- * @description Created the component
+ * @description Created the (class) component
  * @author brunoteixeirasilva
- * @version 1.0
+ * @version 1.0.0
+ *
+ * @description Migrated to function component
+ * @author brunoteixeirasilva
+ * @version 1.0.1
  */
-class Pop extends React.PureComponent {
-	render() {
-		const { children, label, placement } = this.props
+const Pop = (props) => {
+	const { children, label, placement } = props
 
-		return (
-			<Tooltip
-				{...this.props}
-				TransitionComponent={Fade}
-				placement={placement}
-				title={label}
-				children={React.forwardRef((props, ref) =>
-					React.cloneElement(children, { ref: ref })
-				)}
-			/>
-		)
-	}
+	return (
+		<Tooltip
+			{...props}
+			TransitionComponent={Fade}
+			placement={placement}
+			title={label}
+			children={children}
+			// children={React.forwardRef((_, ref) =>
+			// 	React.cloneElement(children, { ref: ref })
+			// )}
+		/>
+	)
 }
 
 Pop.defaultProps = {
 	label: '',
-	placement: 'bottom-start'
+	placement: 'bottom-start',
 }
 
 Pop.propTypes = {
@@ -39,8 +42,8 @@ Pop.propTypes = {
 		'top-end',
 		'top-start',
 		'bottom-end',
-		'bottom-start'
-	])
+		'bottom-start',
+	]),
 }
 
 export default Pop
