@@ -19,11 +19,11 @@ import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 import PlayButton from '../../button/play/PlayButton'
 
 /**
- * @description Created the component
+ * @description home screen
  * @author brunoteixeirasilva
- * @version 1.0
+ * @version 1.1
  */
-class IndexScene extends React.PureComponent {
+class HomeScene extends React.PureComponent {
 	state = {
 		mounted: false
 	}
@@ -80,7 +80,7 @@ class IndexScene extends React.PureComponent {
 	}
 }
 
-IndexScene.propTypes = {
+HomeScene.propTypes = {
 	children: PropTypes.node
 }
 
@@ -88,4 +88,4 @@ export default compose(
 	withRouter,
 	withWidth(),
 	withStyles(styles)
-)(IndexScene)
+)(HomeScene)

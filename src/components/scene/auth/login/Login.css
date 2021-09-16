@@ -1,0 +1,20 @@
+#loginScene {
+    width: 60%;
+    margin: auto;
+    border: 2px solid #3889D1;
+    padding: 10px 35px;
+}
+#loginScene .logo {
+    margin-top: 10%;
+    width: 150px;
+}
+#loginScene .logo2 {
+    margin-top: 10%;
+    width: 100px;
+}
+#loginScene h1 {
+    color: #3889D1;
+}
+#loginScene .loginControls {
+    margin-top: 20%;
+}

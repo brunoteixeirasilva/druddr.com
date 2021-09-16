@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react' 
 import PropTypes from 'prop-types'
+
 import { Switch, Route } from 'react-router-dom'
-import IndexScene from '../scene/index'
+import routes from '../../utils/routes/routes'
+
+// new ones
+import LoginScene from '../scene/auth/login'
+import NewRequestScene from '../scene/request/new'
+
+// old ones
+import HomeScene from '../scene/home'
 import ContactScene from '../scene/contact'
 import NotFoundScene from '../scene/notFound'
 import DocScene from '../scene/doc'
-import routes from '../../utils/routes/routes'
 
 /**
  * Manages to display a centered info panel
@@ -17,7 +24,8 @@ import routes from '../../utils/routes/routes'
 const BodyContainer = () => {
 	return (
 		<Switch>
-			<Route exact path={routes.index} component={IndexScene} />
+			<Route exact path={routes.index} component={LoginScene} />
+			<Route exact path={routes.newRequest} component={NewRequestScene} />
 			<Route exact path={routes.contact} component={ContactScene} />
 			<Route path={routes.doc} component={DocScene} />
 			<Route component={NotFoundScene} />

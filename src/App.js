@@ -9,11 +9,6 @@ import theme from './components/util/theme'
 import { MuiThemeProvider } from '@material-ui/core'
 import routes from './utils/routes/routes'
 
-/**
- * @description Created the component
- * @author brunoteixeirasilva
- * @version 1.0
- */
 class App extends React.Component {
 	render() {
 		return (
