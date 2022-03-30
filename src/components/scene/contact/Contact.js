@@ -172,11 +172,8 @@ function Contact({ classes, match }) {
 			<CloseButton
 				buttonColor="primary"
 				onClick={async (event, history) => {
-					setMounted(false).then((s) => {
-						return history.push(routes.index)
-					})
-
-					return false
+					setMounted(false)
+					history.push(routes.index)
 				}}
 			/>
 		</SceneRoot>

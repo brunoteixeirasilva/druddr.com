@@ -1,7 +1,13 @@
 {
 	"name": "druddr.com",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"private": true,
+	"contributors": [
+		"bruno.teixeira.silva@gmail.com",
+		"nicogallardo@outlook.com",
+		"andresriveiro500@gmail.com",
+		"grignolabusiness@gmail.com"
+	],
 	"dependencies": {
 		"@druddr/form": "0.0.1",
 		"@druddr/translate": "0.0.9",
