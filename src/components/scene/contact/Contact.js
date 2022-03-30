@@ -171,12 +171,9 @@ function Contact({ classes, match }) {
 			{/* </Slide> */}
 			<CloseButton
 				buttonColor="primary"
-				onClick={async (history) => {
-					setMounted(false).then((s) => {
-						return history.push(routes.index)
-					})
-
-					return false
+				onClick={async (event, history) => {
+					setMounted(false)
+					history.push(routes.index)
 				}}
 			/>
 		</SceneRoot>

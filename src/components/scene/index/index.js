@@ -17,6 +17,8 @@ import routes from '../../../utils/routes/routes'
 import SceneRoot from '../root'
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
 import PlayButton from '../../button/play/PlayButton'
+import { HelpButton } from 'components/button/help/HelpButton'
+import { Modal } from 'components/modal/Modal'
 
 /**
  * @description Created the component
@@ -25,7 +27,8 @@ import PlayButton from '../../button/play/PlayButton'
  */
 class IndexScene extends React.PureComponent {
 	state = {
-		mounted: false
+		mounted: false,
+		helpOpen: false,
 	}
 
 	componentDidMount() {
@@ -40,6 +43,14 @@ class IndexScene extends React.PureComponent {
 		this.setState({ mounted })
 	}
 
+	openModal() {
+		this.setState({ helpOpen: true })
+	}
+
+	closeModal() {
+		this.setState({ helpOpen: false })
+	}
+
 	render() {
 		const { classes, history, width } = this.props
 
@@ -48,14 +59,14 @@ class IndexScene extends React.PureComponent {
 				direction="down"
 				in={this.state.mounted}
 				className={classNames(classes.slide, {
-					[classes.out]: !this.state.mounted
+					[classes.out]: !this.state.mounted,
 				})}
 			>
 				<SceneRoot>
 					<Grid
 						container
 						className={classNames(classes.grid, {
-							wide: isWidthUp('sm', width, true)
+							wide: isWidthUp('sm', width, true),
 						})}
 					>
 						<LandingIcon
@@ -73,6 +84,14 @@ class IndexScene extends React.PureComponent {
 							label={'label/we-takeoff'}
 						/>
 					</Grid>
+					<HelpButton onClick={this.openModal.bind(this)} />
+					<Modal
+						open={this.state.helpOpen}
+						onClose={this.closeModal.bind(this)}
+						title={'Test Title'}
+					>
+						{'Help text, work in progress here'}
+					</Modal>
 					<PlayButton route={routes.contact} />
 				</SceneRoot>
 			</Slide>
@@ -81,11 +100,7 @@ class IndexScene extends React.PureComponent {
 }
 
 IndexScene.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
 }
 
-export default compose(
-	withRouter,
-	withWidth(),
-	withStyles(styles)
-)(IndexScene)
+export default compose(withRouter, withWidth(), withStyles(styles))(IndexScene)

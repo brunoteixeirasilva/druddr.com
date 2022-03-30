@@ -20,7 +20,8 @@ class BaseButton extends React.Component {
 			buttonVariant,
 			history,
 			onClick,
-			route
+			route,
+			mode,
 		} = this.props
 		const children = this.props.icon || this.props.children
 		// ! will be used for counting clicks on-a-run
@@ -29,10 +30,15 @@ class BaseButton extends React.Component {
 		return (
 			<Fab
 				color={buttonColor}
-				className={classes.rootBottomButton}
+				className={
+					mode === 'top'
+						? classes.rootTopButton
+						: classes.rootBottomButton
+				}
 				variant={buttonVariant}
 				onClick={(event) => {
-					if (!!onClick) onClick(event, history)
+					if (!!onClick && typeof onClick === 'function')
+						onClick(event, history)
 					return !!route && history.push(route)
 				}}
 				// ref={ref}
@@ -44,7 +50,8 @@ class BaseButton extends React.Component {
 
 BaseButton.defaultProps = {
 	buttonVariant: 'round',
-	buttonColor: 'primary'
+	buttonColor: 'primary',
+	mode: 'bottom',
 }
 
 BaseButton.propTypes = {
@@ -52,10 +59,8 @@ BaseButton.propTypes = {
 	history: PropTypes.object.isRequired,
 	children: PropTypes.node,
 	route: PropTypes.string,
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
+	mode: PropTypes.string,
 }
 
-export default compose(
-	withRouter,
-	withStyles(styles)
-)(BaseButton)
+export default compose(withRouter, withStyles(styles))(BaseButton)
