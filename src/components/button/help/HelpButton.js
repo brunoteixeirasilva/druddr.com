@@ -15,7 +15,8 @@ import Pop from 'components/util/tooltip'
  *
  * @param {Object} props
  */
-const HelpButton = (props) => {
+
+function HelpButton(props) {
 	const { onClick } = props,
 		label = translate('label/help')
 
