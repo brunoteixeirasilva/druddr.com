@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Modal as MaterialUiModal, Backdrop, Paper } from '@material-ui/core'
 import { useStyles } from './styles'
+import ModalTitle from './title/ModalTitle'
 
 /**
  * Modal for cross-system usage
@@ -18,12 +19,12 @@ function Modal(props) {
 			open={open}
 			onClose={onClose}
 			aria-labelledby={title}
-			aria-describedby={description ?? title}
+			aria-describedby={description}
 			BackdropComponent={Backdrop}
 			className={classes.root}
 		>
 			<Paper className={classes.modal} elevation={2}>
-				<h4 className={classes.modalTitle}>{title}</h4>
+				<ModalTitle className={classes.ModalTitle} text={title} />
 				<div className={classes.modalContent}>{children}</div>
 			</Paper>
 		</MaterialUiModal>

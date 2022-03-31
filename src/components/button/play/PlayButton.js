@@ -20,7 +20,12 @@ const PlayButton = (props) => {
 		label = translate('label/next')
 
 	return (
-		<Pop aria-label={label} label={label} placement="top-end">
+		<Pop
+			data-cy="play-button"
+			aria-label={label}
+			label={label}
+			placement="top-end"
+		>
 			<BaseButton
 				buttonColor="primary"
 				buttonVariant="round"

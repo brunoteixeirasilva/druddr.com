@@ -5,7 +5,7 @@ describe('My First Test', () => {
 	})
 
 	it('Clicks bottom button and checks if its loaded', () => {
-		cy.get('.BaseButton-rootBottomButton-218').click()
+		cy.get('.BaseButton-rootBottomButton-217').click()
 		cy.url().should('include', '/contact')
 		cy.contains('Bruno Teixeira')
 	})
@@ -20,6 +20,6 @@ describe('My First Test', () => {
 
 	it('Tests bottom right button', () => {
 		cy.get('.BaseButton-rootBottomButton-189').click()
-		cy.contains('construir')
+		cy.contains('Construir')
 	})
 })

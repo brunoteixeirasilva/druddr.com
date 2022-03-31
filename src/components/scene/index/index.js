@@ -92,7 +92,7 @@ class IndexScene extends React.PureComponent {
 					>
 						{'Help text, work in progress here'}
 					</Modal>
-					<PlayButton route={routes.contact} />
+					<PlayButton data-cy="play-button" route={routes.contact} />
 				</SceneRoot>
 			</Slide>
 		)

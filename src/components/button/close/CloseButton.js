@@ -24,6 +24,7 @@ class CloseButton extends React.Component {
 			<Pop
 				aria-label={label}
 				label={label}
+				data-cy="close-button"
 				placement="top-end"
 				children={
 					<BaseButton
@@ -41,7 +42,7 @@ class CloseButton extends React.Component {
 }
 
 CloseButton.defaultProps = {
-	buttonColor: 'secondary'
+	buttonColor: 'secondary',
 }
 
 export default withStyles(styles)(CloseButton)
