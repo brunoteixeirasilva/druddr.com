@@ -17,18 +17,18 @@ import { translate } from '../../../utils/lang'
  */
 class CloseButton extends React.Component {
 	render() {
-		const { classes, buttonColor, onClick, route } = this.props,
+		const { classes, buttonColor, onClick, route, dataCy } = this.props,
 			label = translate('label/close')
 
 		return (
 			<Pop
 				aria-label={label}
 				label={label}
-				data-cy="close-button"
 				placement="top-end"
 				children={
 					<BaseButton
 						// ref={ref}
+						dataCy={dataCy}
 						buttonColor={buttonColor}
 						buttonVariant="round"
 						route={route}

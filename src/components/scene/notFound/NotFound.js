@@ -37,7 +37,7 @@ class NotFoundScene extends React.PureComponent {
 							{translate('label/not-found')}..
 						</Typography>
 					</Grid>
-					<CloseButton route={routes.index} />
+					<CloseButton dataCy="close-button" route={routes.index} />
 				</SceneRoot>
 			</Slide>
 		)
@@ -45,7 +45,7 @@ class NotFoundScene extends React.PureComponent {
 }
 
 NotFoundScene.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
 }
 
 export default withStyles(styles)(NotFoundScene)

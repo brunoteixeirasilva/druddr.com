@@ -18,6 +18,7 @@ import styles from './styles'
 import { CloseButton } from '../../button'
 import classNames from 'classnames'
 import { translate } from '../../../utils/lang'
+import ComponentMap from 'constants/componentMap'
 
 /**
  * @description Created the component
@@ -170,6 +171,7 @@ function Contact({ classes, match }) {
 			</React.Fragment>
 			{/* </Slide> */}
 			<CloseButton
+				dataCy={ComponentMap.closeButton}
 				buttonColor="primary"
 				onClick={async (event, history) => {
 					setMounted(false)

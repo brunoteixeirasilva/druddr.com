@@ -1,11 +1,14 @@
+import { translate } from '../../src/utils/lang/translate'
+import ComponentMap from '../../src/constants/componentMap'
+
 describe('My First Test', () => {
 	it('Visits the Druddr home page and checks if is correctly loaded', () => {
 		cy.visit('http://localhost:3000/')
-		cy.contains('Druddr')
+		cy.contains(translate('title/app'))
 	})
 
 	it('Clicks bottom button and checks if its loaded', () => {
-		cy.get('.BaseButton-rootBottomButton-217').click()
+		cy.get(`[data-cy=${ComponentMap.playButton}]`).click()
 		cy.url().should('include', '/contact')
 		cy.contains('Bruno Teixeira')
 	})
@@ -19,7 +22,7 @@ describe('My First Test', () => {
 	})
 
 	it('Tests bottom right button', () => {
-		cy.get('.BaseButton-rootBottomButton-189').click()
+		cy.get(`[data-cy=${ComponentMap.closeButton}]`).click()
 		cy.contains('Construir')
 	})
 })
