@@ -16,12 +16,13 @@ import Pop from '../../util/tooltip'
  * @param {Object} props
  */
 const PlayButton = (props) => {
-	const { classes, route } = props,
+	const { classes, route, dataCy } = props,
 		label = translate('label/next')
 
 	return (
 		<Pop aria-label={label} label={label} placement="top-end">
 			<BaseButton
+				dataCy={dataCy}
 				buttonColor="primary"
 				buttonVariant="round"
 				route={route}

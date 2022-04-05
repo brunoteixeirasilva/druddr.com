@@ -6,7 +6,7 @@ import {
 	Toolbar,
 	Typography,
 	withStyles,
-	IconButton
+	IconButton,
 } from '@material-ui/core'
 import { translate } from '../../utils/lang'
 import styles from './styles'
@@ -14,6 +14,7 @@ import InstagramIcon from '../icon/instagram'
 import routes from '../../utils/routes/routes'
 import { compose } from 'recompose'
 import Pop from '../util/tooltip'
+import ComponentMap from '../../constants/componentMap'
 
 /**
  * Manages to display a header for the app
@@ -27,7 +28,60 @@ import Pop from '../util/tooltip'
  * @version 1.1
  *
  */
-class HeaderContainer extends React.PureComponent {
+
+function HeaderContainer({ classes, color, history }) {
+	const handleClick = async (event, address) => {
+		//Will redirect user to the instagram direction
+		if (window) window.location.href = address
+	}
+
+	const instagramUser = translate('author/instagram-address'),
+		instagramAddress = `https://instagr.am/${instagramUser}`,
+		labels = {
+			instagramButton: translate('label/aria/instagram-link', {
+				address: instagramUser,
+			}),
+		}
+
+	return (
+		<AppBar
+			className={
+				color === 'primary' ? classes.root : classes.rootSecondary
+			}
+			position="sticky"
+		>
+			<Toolbar className={classes.flex}>
+				<Typography
+					onClick={(event) => history.push(routes.index)}
+					className={classes.title}
+					color="inherit"
+					variant="h5"
+				>
+					{translate('title/app')}
+				</Typography>
+				<Pop
+					placement="bottom-end"
+					label={labels.instagramButton}
+					children={
+						<IconButton
+							aria-label={labels.instagramButton}
+							data-cy={ComponentMap.instagramButton}
+							target="_blank"
+							onClick={(event) =>
+								handleClick(event, instagramAddress)
+							}
+							className={classes.button}
+						>
+							<InstagramIcon />
+						</IconButton>
+					}
+				/>
+			</Toolbar>
+		</AppBar>
+	)
+}
+
+/* class HeaderContainer extends React.PureComponent {
 	async handleClick(event, address) {
 		//Will redirect user to the instagram direction
 		if (window) window.location.href = address
@@ -38,8 +92,8 @@ class HeaderContainer extends React.PureComponent {
 			instagramAddress = `https://instagr.am/${instagramUser}`,
 			labels = {
 				instagramButton: translate('label/aria/instagram-link', {
-					address: instagramUser
-				})
+					address: instagramUser,
+				}),
 			},
 			{ classes, color, history } = this.props
 
@@ -80,17 +134,14 @@ class HeaderContainer extends React.PureComponent {
 		)
 	}
 }
-
+ */
 HeaderContainer.defaultProps = {
-	color: 'primary'
+	color: 'primary',
 }
 
 HeaderContainer.propTypes = {
 	classes: PropTypes.object.isRequired,
-	color: PropTypes.oneOf(['primary', 'secondary'])
+	color: PropTypes.oneOf(['primary', 'secondary']),
 }
 
-export default compose(
-	withRouter,
-	withStyles(styles)
-)(HeaderContainer)
+export default compose(withRouter, withStyles(styles))(HeaderContainer)

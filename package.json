@@ -1,7 +1,13 @@
 {
 	"name": "druddr.com",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"private": true,
+	"contributors": [
+		"bruno.teixeira.silva@gmail.com",
+		"nicogallardo@outlook.com",
+		"andresriveiro500@gmail.com",
+		"grignolabusiness@gmail.com"
+	],
 	"dependencies": {
 		"@druddr/form": "0.0.1",
 		"@druddr/translate": "0.0.9",
@@ -27,7 +33,7 @@
 		"predeploy": "npm run build",
 		"deploy": "gcloud app deploy app.yaml --project=druddr-site --quiet"
 	},
-	"eslintConfig": {
+	"eslinYtConfig": {
 		"extends": "react-app"
 	},
 	"browserslist": [
@@ -35,5 +41,10 @@
 		"not dead",
 		"not ie <= 11",
 		"not op_mini all"
-	]
+	],
+	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.3",
+		"@testing-library/react": "^12.1.4",
+		"cypress": "^9.5.2"
+	}
 }

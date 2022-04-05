@@ -17,7 +17,7 @@ import { translate } from '../../../utils/lang'
  */
 class CloseButton extends React.Component {
 	render() {
-		const { classes, buttonColor, onClick, route } = this.props,
+		const { classes, buttonColor, onClick, route, dataCy } = this.props,
 			label = translate('label/close')
 
 		return (
@@ -28,6 +28,7 @@ class CloseButton extends React.Component {
 				children={
 					<BaseButton
 						// ref={ref}
+						dataCy={dataCy}
 						buttonColor={buttonColor}
 						buttonVariant="round"
 						route={route}
@@ -41,7 +42,7 @@ class CloseButton extends React.Component {
 }
 
 CloseButton.defaultProps = {
-	buttonColor: 'secondary'
+	buttonColor: 'secondary',
 }
 
 export default withStyles(styles)(CloseButton)

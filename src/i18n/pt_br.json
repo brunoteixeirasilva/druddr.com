@@ -10,6 +10,7 @@
 	"author/e-mail-href": "mailto:bruno@druddr.com",
 	"author/skype-address-href": "skype:bruno.teixeira.silva?call",
 	"label/aria/instagram-link": "@${address} no Instagram!",
+	"label/help": "Ajuda",
 	"label/next": "Avançar",
 	"label/close": "Fechar",
 	"label/open-menu": "Abrir menu",
@@ -19,6 +20,7 @@
 	"label/wrong-way": "Abrir menu",
 	"label/not-found": "Não encontrado",
 	"label/empty": "",
+	"label/instagram": "@druddr",
 	"title/app": "Druddr",
 	"title/author": "Bruno Teixeira"
 }
