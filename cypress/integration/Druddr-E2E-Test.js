@@ -1,28 +1,29 @@
 import { translate } from '../../src/utils/lang/translate'
 import ComponentMap from '../../src/constants/componentMap'
+import router from '../../src/utils/routes/routes'
 
-describe('My First Test', () => {
+describe('Druddr E2E Test', () => {
 	it('Visits the Druddr home page and checks if is correctly loaded', () => {
-		cy.visit('http://localhost:3000/')
+		cy.visit(router.url)
 		cy.contains(translate('title/app'))
 	})
 
 	it('Clicks bottom button and checks if its loaded', () => {
 		cy.get(`[data-cy=${ComponentMap.playButton}]`).click()
-		cy.url().should('include', '/contact')
-		cy.contains('Bruno Teixeira')
+		cy.url().should('include', router.contact)
+		cy.contains(translate('title/author'))
 	})
 
 	it('Tests if top right button works properly', () => {
-		cy.get('.HeaderContainer-button-4').trigger('mouseover')
-		cy.contains('@druddr')
-		cy.get('.HeaderContainer-button-4').click()
+		cy.get(`[data-cy=${ComponentMap.instagramButton}]`).trigger('mouseover')
+		cy.contains(translate('label/instagram'))
+		cy.get(`[data-cy=${ComponentMap.instagramButton}]`).click()
 		cy.url().should('include', 'instagram')
 		cy.go('back')
 	})
 
 	it('Tests bottom right button', () => {
 		cy.get(`[data-cy=${ComponentMap.closeButton}]`).click()
-		cy.contains('Construir')
+		cy.contains(translate('label/we-build'))
 	})
 })
