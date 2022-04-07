@@ -38,10 +38,27 @@
     -   Made a Map for data-cy attributes
     -   Used the map constants in each component and test file.
 
-### 04/04/2022 - React Session #4 [TBD]
+### 07/04/2022 - React Session #4 [DONE]
+
+#### Changes applied
+
+-   [DONE][0.1h] ReduxJS
+    -   [DONE][0.1h] To be installed and used with redux-toolkit
+-   [DONE][0.9h] I18n Package language selection component
+    -   [DONE][0.6h] Dropdown in system header
+    -   [DONE][0.3h] State management for changing language
+        -   Local State
+-   Packaging version 1.0.7
+
+### 12/04/2022 - React Session #5 [TBD]
 
 #### Changes planned
 
--   I18n Package language selection + dropdown in system
--   ReduxJS
-    -   To be installed and used with redux-toolkit
+-   [TBD] ReduxJs to be implemented for global state management
+    -   Hook in the App.js
+    -   Instantiation of the state provider
+-   [TBD] Refactor the Language Dropdown component to use Redux/Selector pattern
+    -   Action
+    -   Dispatcher
+    -   Reducer
+    -   Selector

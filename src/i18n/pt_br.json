@@ -21,6 +21,9 @@
 	"label/not-found": "Não encontrado",
 	"label/empty": "",
 	"label/instagram": "@druddr",
+	"label/language": "Língua",
+	"label/language/pt_br": "Português (Brasil)",
+	"label/language/en_uk": "Inglês (UK)",
 	"title/app": "Druddr",
 	"title/author": "Bruno Teixeira"
 }

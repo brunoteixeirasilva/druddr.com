@@ -20,6 +20,10 @@
 	"label/wrong-way": "Open menu",
 	"label/not-found": "Not found",
 	"label/empty": "",
+	"label/instagram": "@druddr",
+	"label/language": "Language",
+	"label/language/pt_br": "Portuguese (Brazil)",
+	"label/language/en_uk": "English (UK)",
 	"title/app": "Druddr",
 	"title/author": "Bruno Teixeira"
 }
