@@ -14,6 +14,7 @@ import InstagramIcon from '../icon/instagram'
 import routes from '../../utils/routes/routes'
 import { compose } from 'recompose'
 import Pop from '../util/tooltip'
+import ComponentMap from '../../constants/componentMap'
 
 /**
  * Manages to display a header for the app
@@ -64,6 +65,7 @@ function HeaderContainer({ classes, color, history }) {
 					children={
 						<IconButton
 							aria-label={labels.instagramButton}
+							data-cy={ComponentMap.instagramButton}
 							target="_blank"
 							onClick={(event) =>
 								handleClick(event, instagramAddress)

@@ -22,6 +22,7 @@ class BaseButton extends React.Component {
 			onClick,
 			route,
 			mode,
+			dataCy,
 		} = this.props
 		const children = this.props.icon || this.props.children
 		// ! will be used for counting clicks on-a-run
@@ -29,6 +30,7 @@ class BaseButton extends React.Component {
 
 		return (
 			<Fab
+				data-cy={dataCy || new Date().getMilliseconds()}
 				color={buttonColor}
 				className={
 					mode === 'top'

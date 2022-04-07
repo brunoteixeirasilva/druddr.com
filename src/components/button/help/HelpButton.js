@@ -21,7 +21,12 @@ function HelpButton(props) {
 		label = translate('label/help')
 
 	return (
-		<Pop aria-label={label} label={label} placement="top-end">
+		<Pop
+			data-cy="help-button"
+			aria-label={label}
+			label={label}
+			placement="top-end"
+		>
 			<BaseButton
 				buttonColor="primary"
 				buttonVariant="round"
