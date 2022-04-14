@@ -9,6 +9,10 @@ import Select from '@material-ui/core/Select'
 
 // Languages imports
 import { translate } from 'utils/lang'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { changeLanguage } from 'redux/configuration'
+
 const pt_br = require('i18n/pt_br.json')
 const en_uk = require('i18n/en_uk.json')
 
@@ -19,7 +23,7 @@ const languages = {
 	pt_br: pt_br,
 }
 
-const defaultLanguage = 'pt_br'
+/* const defaultLanguage = 'pt_br' */
 
 /**
  * Generates a Language selection dropdown for the application.
@@ -29,10 +33,14 @@ const defaultLanguage = 'pt_br'
  * @version 1.0
  */
 function LanguageDropdown() {
+	const selectedLanguage = useSelector(
+		(state) => state.configuration.language
+	)
+	const dispatch = useDispatch()
 	const classes = useStyles(),
-		[currentLanguage, setCurrentLanguage] = useState(defaultLanguage),
+		/* [currentLanguage, setCurrentLanguage] = useState(defaultLanguage), */
 		handleChange = useCallback((event) => {
-			setCurrentLanguage(event.target.value)
+			dispatch(changeLanguage(event.target.value))
 		}, [])
 
 	return (
@@ -42,7 +50,7 @@ function LanguageDropdown() {
 				<Select
 					labelId="demo-simple-select-label"
 					id="demo-simple-select"
-					value={currentLanguage}
+					value={selectedLanguage}
 					onChange={handleChange}
 				>
 					{Object.keys(languages).map((lang) => (

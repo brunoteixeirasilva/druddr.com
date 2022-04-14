@@ -50,14 +50,14 @@
         -   Local State
 -   Packaging version 1.0.7
 
-### 12/04/2022 - React Session #5 [TBD]
+### 14/04/2022 - React Session #5 [DONE]
 
-#### Changes planned
+#### Changes applied
 
--   [TBD] ReduxJs to be implemented for global state management
+-   [DONE][0.4h] ReduxJs to be implemented for global state management
     -   Hook in the App.js
     -   Instantiation of the state provider
--   [TBD] Refactor the Language Dropdown component to use Redux/Selector pattern
+-   [DONE][0.7h] Refactor the Language Dropdown component to use Redux/Selector pattern
     -   Action
     -   Dispatcher
     -   Reducer
