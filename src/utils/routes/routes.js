@@ -1,4 +1,7 @@
 const routes = {
+	services: {
+		url: 'http://localhost:3010',
+	},
 	url: 'http://localhost:3000',
 	index: '/',
 	contact: '/contact',
@@ -6,4 +9,4 @@ const routes = {
 	api: '/api',
 }
 
-export default routes
+export { routes }

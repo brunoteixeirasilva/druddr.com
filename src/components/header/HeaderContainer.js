@@ -11,7 +11,7 @@ import {
 import { translate } from 'utils/lang'
 import styles from './styles'
 import InstagramIcon from '../icon/instagram'
-import routes from '../../utils/routes/routes'
+import { routes } from 'utils/routes'
 import { compose } from 'recompose'
 import Pop from '../util/tooltip'
 import ComponentMap from '../../constants/componentMap'

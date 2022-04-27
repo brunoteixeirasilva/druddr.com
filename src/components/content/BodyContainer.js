@@ -6,7 +6,7 @@ import ContactScene from '../scene/contact'
 import NotFoundScene from '../scene/notFound'
 import DocScene from '../scene/doc'
 import List from '../scene/list'
-import routes from '../../utils/routes/routes'
+import { routes } from 'utils/routes'
 
 /**
  * Manages to display a centered info panel

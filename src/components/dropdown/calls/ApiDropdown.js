@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import { useStyles } from '../language/styles'
@@ -6,9 +7,10 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 
-import { translate } from '../../../../src/utils/lang/translate'
+import { translate } from 'utils/lang'
+import { API } from 'utils/api'
 
-const calls = ['movies', 'tokens', 'users', 'comments', 'pets']
+import { changeApi } from 'redux/apiData'
 
 /**
  * API Dropdown
@@ -21,9 +23,10 @@ const calls = ['movies', 'tokens', 'users', 'comments', 'pets']
  */
 
 function ApiDropdown() {
-	const [selected, setSelected] = useState('movies')
-
+	const dispatch = useDispatch()
+	const apiDataState = useSelector((s) => s.apiData)
 	const classes = useStyles()
+
 	return (
 		<div className={classes.container}>
 			<FormControl className={classes.formControl}>
@@ -31,16 +34,22 @@ function ApiDropdown() {
 				<Select
 					labelId="demo-simple-select-label"
 					id="demo-simple-select"
-					value={selected}
+					value={apiDataState.selectedApi}
 					onChange={(e) => {
-						setSelected(e.target.value)
+						dispatch(changeApi(e.target.value))
 					}}
 				>
-					{calls.map((call) => (
-						<MenuItem key={call} value={call}>
-							{translate(`label/${call}`)}
-						</MenuItem>
-					))}
+					{Object.keys(API)
+						.filter((k) => k !== 'default')
+						.map((APIKey) => (
+							<MenuItem
+								key={APIKey}
+								value={APIKey}
+								// selected={selected === APIKey}
+							>
+								{translate(`label/${API[APIKey].key}`)}
+							</MenuItem>
+						))}
 				</Select>
 			</FormControl>
 		</div>

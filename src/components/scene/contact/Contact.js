@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import routes from '../../../utils/routes/routes'
+import { routes } from 'utils/routes'
 import SceneRoot from '../root'
 import {
 	withStyles,

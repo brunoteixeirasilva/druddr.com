@@ -63,12 +63,27 @@
     -   Reducer
     -   Selector
 
-### 27/4/2022 - React Session #6 [WIP]
+### 27/4/2022 - React Session #6 [DONE]
 
 ### Changes applied
 
--   [WIP] Adding service layer class
--   [WIP] Adding class for lazy loading services (LazyInjectableService)
--   [WIP] Adding class for injectable services (InjectableService)
--   [WIP] Create a base class for HttpRequest services
--   [WIP] Create a service for Pet requests
+-   [DONE][0.5h] Adding Http service abstraction layer class
+    -   ServiceBase
+-   [DONE][0.3h] Create an API reference for allocation of APIs of the system
+-   [DONE][0.1h] Create a service for Pet requests
+-   [DONE][0.4h] Support for Api Data state layer manipulation
+-   [DONE][0.2h] Created actions and reducers for Api Data controlling
+-   [DONE][0.1h] Refactoring Routing table of system
+-   [DONE][0.1h] Add support for forced language reloading
+-   [DONE][0.1h] Added Api Data reducer to application Store
+-   [DONE][0.3h] Refactored system imports which were having errors
+-   [DONE][0.5h] Implemented fully functioning dropdown
+
+### DD/MM/2022 - React Session #7 [TODO]
+
+### Changes Planned
+
+-   [TODO] Create a new dropdown for displaying the `apiData.data` list state portion
+-   [TODO] Add observation of forced language reloading => remount App component from useEffect
+-   [TODO] Adding class for lazy loading services (LazyInjectableService)
+-   [TODO] Adding class for injectable services (InjectableService)

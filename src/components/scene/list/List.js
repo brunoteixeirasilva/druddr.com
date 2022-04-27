@@ -1,9 +1,15 @@
+import React, { useEffect, useState, useMemo, useCallback } from 'react'
+import Button from '@material-ui/core/Button'
+
+import { useSelector, useDispatch } from 'react-redux'
+
 import ApiDropdown from '../../dropdown/calls/ApiDropdown'
-import React, { useEffect, useState } from 'react'
 import ComponentMap from 'constants/componentMap'
 import { CloseButton } from '../../button'
-import routes from '../../../utils/routes/routes'
-import Button from '@material-ui/core/Button'
+import { routes } from 'utils/routes'
+import { API } from 'utils/api'
+
+import { setData } from 'redux/apiData'
 
 /**
  * API page
@@ -16,21 +22,23 @@ import Button from '@material-ui/core/Button'
  */
 
 function List() {
-	const objTest = [
-		{
-			name: 'Lorenzo',
-			age: '21',
-		},
-		{
-			name: 'Juan',
-			age: '23',
-		},
-		{
-			name: 'Julian',
-			age: '22',
-		},
-	]
 	const [mounted, setMounted] = useState(false)
+	const dispatch = useDispatch()
+	const selectedApi = useSelector((s) => s.apiData.selectedApi)
+	const data = useSelector((s) => s.apiData.data)
+	const ServiceWrapper = useMemo(() => API[selectedApi], [selectedApi])
+
+	const onClick = useCallback(async () => {
+		ServiceWrapper.service.get().then((d) => dispatch(setData({ data: d })))
+	}, [ServiceWrapper])
+
+	useEffect(() => {
+		if (!!data) {
+			alert('Hey, I have data. Please, check the browser logs.')
+			console.log('API Retrieved data')
+			console.log(data)
+		}
+	}, [data])
 
 	useEffect(() => {
 		setMounted(true)
@@ -44,18 +52,10 @@ function List() {
 		<>
 			<div>
 				<ApiDropdown />
-				<Button variant="contained" color="primary">
+				<Button variant="contained" color="primary" onClick={onClick}>
 					Fetch
 				</Button>
 			</div>
-
-			{objTest.map((x) => {
-				return (
-					<p key={x}>
-						Name is {x.name} and age is {x.age}
-					</p>
-				)
-			})}
 
 			<CloseButton
 				dataCy={ComponentMap.closeButton}
