@@ -20,6 +20,7 @@ import PlayButton from '../../button/play/PlayButton'
 import { HelpButton } from 'components/button/help/HelpButton'
 import { Modal } from 'components/modal/Modal'
 import ComponentMap from 'constants/componentMap'
+import ApiButton from '../../button/api/ApiButton'
 
 /**
  * @description Created the component
@@ -96,6 +97,10 @@ class IndexScene extends React.PureComponent {
 					<PlayButton
 						dataCy={ComponentMap.playButton}
 						route={routes.contact}
+					/>
+					<ApiButton
+						dataCy={ComponentMap.apiButton}
+						route={routes.api}
 					/>
 				</SceneRoot>
 			</Slide>

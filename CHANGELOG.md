@@ -62,3 +62,13 @@
     -   Dispatcher
     -   Reducer
     -   Selector
+
+### 27/4/2022 - React Session #6 [WIP]
+
+### Changes applied
+
+-   [WIP] Adding service layer class
+-   [WIP] Adding class for lazy loading services (LazyInjectableService)
+-   [WIP] Adding class for injectable services (InjectableService)
+-   [WIP] Create a base class for HttpRequest services
+-   [WIP] Create a service for Pet requests

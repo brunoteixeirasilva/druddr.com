@@ -3,6 +3,7 @@ const routes = {
 	index: '/',
 	contact: '/contact',
 	doc: '/doc/:documentId(\\w*)',
+	api: '/api',
 }
 
 export default routes

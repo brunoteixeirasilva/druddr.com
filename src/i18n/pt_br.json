@@ -12,6 +12,7 @@
 	"label/aria/instagram-link": "@${address} no Instagram!",
 	"label/help": "Ajuda",
 	"label/next": "Avançar",
+	"label/api": "API",
 	"label/close": "Fechar",
 	"label/open-menu": "Abrir menu",
 	"label/we-build": "Construir",
@@ -24,6 +25,11 @@
 	"label/language": "Língua",
 	"label/language/pt_br": "Português (Brasil)",
 	"label/language/en_uk": "Inglês (UK)",
+	"label/movies": "Filmes",
+	"label/tokens": "Tokens",
+	"label/users": "Comercial",
+	"label/comments": "Comentários",
+	"label/pets": "Animais de estimação",
 	"title/app": "Druddr",
 	"title/author": "Bruno Teixeira"
 }
