@@ -52,7 +52,12 @@ function List() {
 		<>
 			<div>
 				<ApiDropdown />
-				<Button variant="contained" color="primary" onClick={onClick}>
+				<Button
+					variant="contained"
+					data-cy={ComponentMap.fetchButton}
+					color="primary"
+					onClick={onClick}
+				>
 					Fetch
 				</Button>
 			</div>

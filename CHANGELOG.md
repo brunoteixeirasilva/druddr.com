@@ -79,7 +79,24 @@
 -   [DONE][0.3h] Refactored system imports which were having errors
 -   [DONE][0.5h] Implemented fully functioning dropdown
 
-### DD/MM/2022 - React Session #7 [TODO]
+### 3/5/2022 - E2E Testing Studies [DONE]
+
+### Changes Done
+
+-   [DONE] Created set of e2e tests for new API page.
+
+### DD/MM/2022 - React Session #7 [WIP]
+
+### Changes Planned
+
+-   [WIP] Pipe function for request response parsing
+    -   In case of success, returns only what's in data
+    -   In case of error scenario => has to treat
+    -   Should store the state of the last error => reducer slice
+    -   Create the error message display box (to start with js alert() function)
+    -   Should depict errors and display an show error message => action dispatch
+
+### DD/MM/2022 - React Session #8 [TODO]
 
 ### Changes Planned
 
