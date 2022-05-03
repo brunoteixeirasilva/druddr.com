@@ -11,7 +11,7 @@ import Select from '@material-ui/core/Select'
 import { translate } from 'utils/lang'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { changeLanguage } from 'redux/configuration'
+import { changeLanguage, setReload } from 'redux/configuration'
 
 const pt_br = require('i18n/pt_br.json')
 const en_uk = require('i18n/en_uk.json')
