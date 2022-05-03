@@ -8,27 +8,30 @@ import {
 	withStyles,
 	IconButton,
 } from '@material-ui/core'
-import { translate } from '../../utils/lang'
+import { translate } from 'utils/lang'
 import styles from './styles'
 import InstagramIcon from '../icon/instagram'
-import routes from '../../utils/routes/routes'
+import { routes } from 'utils/routes'
 import { compose } from 'recompose'
 import Pop from '../util/tooltip'
 import ComponentMap from '../../constants/componentMap'
+import LanguageDropdown from '../dropdown/language/LanguageDropdown'
 
 /**
  * Manages to display a header for the app
  *
  * @description Created the component
- * @author brunoteixeirasilva
+ * @author brunoteixeirasilva,
  * @version 1.0
  *
  * @description Added the handleClick fn
  * @author brunoteixeirasilva
  * @version 1.1
  *
+ * @description Adding the language selection dropwdown
+ * @author brunoteixeirasilva, lologrignola, andresriveiro
+ * @version 1.2
  */
-
 function HeaderContainer({ classes, color, history }) {
 	const handleClick = async (event, address) => {
 		//Will redirect user to the instagram direction
@@ -59,6 +62,7 @@ function HeaderContainer({ classes, color, history }) {
 				>
 					{translate('title/app')}
 				</Typography>
+				<LanguageDropdown />
 				<Pop
 					placement="bottom-end"
 					label={labels.instagramButton}

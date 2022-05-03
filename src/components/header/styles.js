@@ -6,13 +6,13 @@ const styles = (theme) => ({
 		transition: 'color 800ms, background-color 800ms',
 		backgroundColor: '#FFFFFF',
 		color: lightBlue[700],
-		boxShadow: 'unset'
+		boxShadow: 'unset',
 	},
 	rootSecondary: {
 		transition: 'color 500ms',
 		backgroundColor: 'transparent',
 		color: grey[200],
-		boxShadow: 'unset'
+		boxShadow: 'unset',
 	},
 	flex: {
 		display: 'flex',
@@ -20,19 +20,19 @@ const styles = (theme) => ({
 		alignItems: 'center',
 		justifyContent: 'flex-start',
 		'& > *': {
-			flex: '0 0 auto'
-		}
+			flex: '0 0 auto',
+		},
 	},
 	button: {
-		marginLeft: 'auto',
-		justifySelf: 'flex-end'
+		marginLeft: theme.spacing(2),
+		justifySelf: 'flex-end',
 	},
 	title: {
 		marginLeft: theme.spacing(2),
 		fontWeight: 500,
 		textTransform: 'uppercase',
-		cursor: 'pointer'
-	}
+		cursor: 'pointer',
+	},
 })
 
 export default styles

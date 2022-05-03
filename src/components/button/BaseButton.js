@@ -33,7 +33,9 @@ class BaseButton extends React.Component {
 				data-cy={dataCy || new Date().getMilliseconds()}
 				color={buttonColor}
 				className={
-					mode === 'top'
+					mode === 'left'
+						? classes.rootBottomLeftButton
+						: mode === 'top'
 						? classes.rootTopButton
 						: classes.rootBottomButton
 				}

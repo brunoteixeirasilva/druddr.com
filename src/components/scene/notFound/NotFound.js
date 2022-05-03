@@ -5,7 +5,7 @@ import { Grid, withStyles, Typography, Slide } from '@material-ui/core'
 import ExploreOffIcon from '@material-ui/icons/ExploreOffRounded'
 
 import styles from './styles'
-import routes from '../../../utils/routes/routes'
+import { routes } from 'utils/routes'
 import SceneRoot from '../root'
 import { CloseButton } from '../../button'
 import LandingIcon from '../../icon/landing'

@@ -38,10 +38,52 @@
     -   Made a Map for data-cy attributes
     -   Used the map constants in each component and test file.
 
-### 04/04/2022 - React Session #4 [TBD]
+### 07/04/2022 - React Session #4 [DONE]
 
-#### Changes planned
+#### Changes applied
 
--   I18n Package language selection + dropdown in system
--   ReduxJS
-    -   To be installed and used with redux-toolkit
+-   [DONE][0.1h] ReduxJS
+    -   [DONE][0.1h] To be installed and used with redux-toolkit
+-   [DONE][0.9h] I18n Package language selection component
+    -   [DONE][0.6h] Dropdown in system header
+    -   [DONE][0.3h] State management for changing language
+        -   Local State
+-   Packaging version 1.0.7
+
+### 14/04/2022 - React Session #5 [DONE]
+
+#### Changes applied
+
+-   [DONE][0.4h] ReduxJs to be implemented for global state management
+    -   Hook in the App.js
+    -   Instantiation of the state provider
+-   [DONE][0.7h] Refactor the Language Dropdown component to use Redux/Selector pattern
+    -   Action
+    -   Dispatcher
+    -   Reducer
+    -   Selector
+
+### 27/4/2022 - React Session #6 [DONE]
+
+### Changes applied
+
+-   [DONE][0.5h] Adding Http service abstraction layer class
+    -   ServiceBase
+-   [DONE][0.3h] Create an API reference for allocation of APIs of the system
+-   [DONE][0.1h] Create a service for Pet requests
+-   [DONE][0.4h] Support for Api Data state layer manipulation
+-   [DONE][0.2h] Created actions and reducers for Api Data controlling
+-   [DONE][0.1h] Refactoring Routing table of system
+-   [DONE][0.1h] Add support for forced language reloading
+-   [DONE][0.1h] Added Api Data reducer to application Store
+-   [DONE][0.3h] Refactored system imports which were having errors
+-   [DONE][0.5h] Implemented fully functioning dropdown
+
+### DD/MM/2022 - React Session #7 [TODO]
+
+### Changes Planned
+
+-   [TODO] Create a new dropdown for displaying the `apiData.data` list state portion
+-   [TODO] Add observation of forced language reloading => remount App component from useEffect
+-   [TODO] Adding class for lazy loading services (LazyInjectableService)
+-   [TODO] Adding class for injectable services (InjectableService)
