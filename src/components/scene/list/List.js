@@ -29,7 +29,10 @@ function List() {
 	const ServiceWrapper = useMemo(() => API[selectedApi], [selectedApi])
 
 	const onClick = useCallback(async () => {
-		ServiceWrapper.service.get().then((d) => dispatch(setData({ data: d })))
+		ServiceWrapper.service.get().then((d) => {
+			debugger
+			return dispatch(setData({ data: d }))
+		})
 	}, [ServiceWrapper])
 
 	useEffect(() => {

@@ -77,7 +77,41 @@ class ServiceBase {
 		return fetch(
 			`${slashLessBaseUrl}/${slashLessServiceUrl}${resolvedSuffix}`,
 			requestOptions
-		).then((res) => res.json())
+		)
+			.then((res) => res.json())
+			.then((res) => {
+				const jsonObject = res
+
+				// The returned object from a request should be a valid JSON object kind
+				if (!jsonObject) throw Error('JSON response is not valid.')
+
+				if (jsonObject.error) throw Error(jsonObject)
+
+				return jsonObject.data // something returned successfully
+			})
+			.catch((ex) => {
+				let resultantObject = null
+
+				debugger
+
+				// TODO: connect with error services
+				if (typeof ex === 'string')
+					return alert(`Ops! A serious error ocurred.\r\n${ex}`)
+
+				// do the error management
+				switch (ex.code) {
+					case 401:
+						resultantObject = ex.message
+						// we can trigger the display of an authentication required
+						break
+					default:
+						resultantObject = ex.message
+						// nothing done with defaults
+						break
+				}
+
+				return resultantObject
+			})
 	}
 
 	async doRequestWithPayload(
