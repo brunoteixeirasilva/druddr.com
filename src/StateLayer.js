@@ -11,4 +11,6 @@ function StateLayer() {
 	)
 }
 
+export { store }
+
 export default StateLayer

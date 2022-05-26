@@ -85,18 +85,26 @@
 
 -   [DONE] Created set of e2e tests for new API page.
 
-### DD/MM/2022 - React Session #7 [WIP]
+### 3/5/2022 - React Session #7 [DONE]
+
+### Changes applied
+
+-   [DONE] Pipe function for request response parsing
+    -   [DONE][0.2h] In case of success, returns only what's in data
+    -   [DONE][0.5h] In case of error scenario => has to treat
+
+### 24/05/2022 - React Session #8 [WIP]
 
 ### Changes Planned
 
--   [TODO] Pipe function for request response parsing
-    -   [DONE][0.2h] In case of success, returns only what's in data
-    -   [DONE][0.5h] In case of error scenario => has to treat
-    -   [TODO] Should store the state of the last error => reducer slice
-    -   [TODO] Create the error message display box (to start with js alert() function)
-    -   [TODO] Should depict errors and display an show error message => action dispatch
+-   [WIP] Create and introduce Message modal component
+    -   [WIP] Create the error message display box (to start with js alert() function)
+-   [WIP] Message modal State management using Redux
+    -   [WIP] Should store the state of the last error => reducer slice
+-   [WIP] Message modal opener function with message and type
+    -   [WIP] Should depict errors and display an show error message => action dispatch
 
-### DD/MM/2022 - React Session #8 [TODO]
+### DD/MM/2022 - React Session #9 [TODO]
 
 ### Changes Planned
 

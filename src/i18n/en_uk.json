@@ -9,6 +9,7 @@
 	"author/phone-number-href": "tel:+5551993381562",
 	"author/e-mail-href": "mailto:bruno@druddr.com",
 	"author/skype-address-href": "skype:bruno.teixeira.silva?call",
+	"button/close": "Close",
 	"label/aria/instagram-link": "@${address} on Instagram!",
 	"label/help": "Help",
 	"label/next": "Advance",
@@ -30,6 +31,10 @@
 	"label/users": "Users",
 	"label/comments": "Comments",
 	"label/pets": "Pets",
+	"messageType/title/success": "Success!",
+	"messageType/title/error": "Error",
+	"messageType/title/warning": "Warning",
+	"messageType/title/info": "Info",
 	"title/app": "Druddr",
 	"title/author": "Bruno Teixeira"
 }

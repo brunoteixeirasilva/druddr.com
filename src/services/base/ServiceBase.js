@@ -1,5 +1,8 @@
 import { routes } from 'utils/routes'
 
+// Service imports
+import { MessageModalService } from 'services/MessageModalService'
+
 const HttpVerbs = {
 	get: 'GET',
 	post: 'POST',
@@ -92,11 +95,11 @@ class ServiceBase {
 			.catch((ex) => {
 				let resultantObject = null
 
-				debugger
-
 				// TODO: connect with error services
 				if (typeof ex === 'string')
-					return alert(`Ops! A serious error ocurred.\r\n${ex}`)
+					return new MessageModalService().error(
+						`Ops! A serious error ocurred.\r\n${ex}`
+					)
 
 				// do the error management
 				switch (ex.code) {
