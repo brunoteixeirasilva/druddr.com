@@ -11,7 +11,7 @@ const withFileReader = (Component) => {
 	class WithFileReader extends React.PureComponent {
 		state = {
 			fr: null,
-			result: null
+			result: null,
 		}
 
 		componentDidMount() {
@@ -39,7 +39,6 @@ const withFileReader = (Component) => {
 					return response.blob()
 				})
 				.then((text) => {
-					debugger
 					self.handleFileRead(text)
 					// self.setState()
 				})
@@ -81,7 +80,6 @@ class DocScene extends React.PureComponent {
 
 		//Whenever document-id is available
 		if (match.params.documentId) {
-			debugger
 			this.props.onMount(
 				path.join(
 					`../../../../public/markdown`,
@@ -119,10 +117,7 @@ class DocScene extends React.PureComponent {
 }
 
 DocScene.propTypes = {
-	documentId: PropTypes.string
+	documentId: PropTypes.string,
 }
 
-export default compose(
-	withRouter,
-	withFileReader
-)(DocScene)
+export default compose(withRouter, withFileReader)(DocScene)

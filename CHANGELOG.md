@@ -95,20 +95,41 @@
 
 ### 24/05/2022 - React Session #8 [WIP]
 
-### Changes Planned
+### Changes Applied
 
--   [WIP] Create and introduce Message modal component
-    -   [WIP] Create the error message display box (to start with js alert() function)
--   [WIP] Message modal State management using Redux
-    -   [WIP] Should store the state of the last error => reducer slice
--   [WIP] Message modal opener function with message and type
-    -   [WIP] Should depict errors and display an show error message => action dispatch
+-   [DONE] Create and introduce Message modal component
+    -   [DONE] Create the error message display box (to start with js alert() function)
+-   [DONE] Message modal State management using Redux
+    -   [DONE] Should store the state of the last error => reducer slice
+-   [DONE] Message modal opener function with message and type (service objects)
+    -   [DONE] Should depict errors and display an show error message => action dispatch
 
 ### DD/MM/2022 - React Session #9 [TODO]
 
+### Changes Done
+
+-   [DONE] Treat errors by faulty API calls (sample calling unexistant API)
+    -   Should show an exception within MessageModal
+-   [WIP] Create a ServiceBus (BackBone) for injecting all the services as dependencies of it
+    -   Lazy services
+    -   Singletons
+-   [DONE] Added new strings to i18n
+-   [DONE] Created ReduxService for abstraction.
+-   [DONE] Extended "api.js" for new ApiService.
+-   [DONE] Added ReduxService exports in base/index
+-   [DONE] Changes to MessageModalService for better functionality.
+-   [DONE] Created ApiService class.
+-   [DONE] Changes to redux messageModal to allow reseting and closing without weird behavior.
+-   [DONE] Changes to redux apiData to handle new changes.
+-   [DONE] Creation of ErrorCodeMap for error dictionary.
+-   [DONE] Changes to List.js to handle new API call function.
+
+### DD/MM/2022 - React Session #10 [TODO]
+
 ### Changes Planned
 
+-   [TODO] Create a table do display data from the dropdown
 -   [TODO] Create a new dropdown for displaying the `apiData.data` list state portion
--   [TODO] Add observation of forced language reloading => remount App component from useEffect
 -   [TODO] Adding class for lazy loading services (LazyInjectableService)
 -   [TODO] Adding class for injectable services (InjectableService)
+-   [TODO] Add observation of forced language reloading => remount App component from useEffect

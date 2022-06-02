@@ -31,10 +31,14 @@
 	"label/users": "Comercial",
 	"label/comments": "Comentários",
 	"label/pets": "Animais de estimação",
+	"label/messageModal": "Oi sou modal",
 	"messageType/title/success": "Successo!",
 	"messageType/title/error": "Erro",
 	"messageType/title/warning": "Atenção",
 	"messageType/title/info": "Info",
 	"title/app": "Druddr",
-	"title/author": "Bruno Teixeira"
+	"title/author": "Bruno Teixeira",
+	"error/general": "Erro crítico.",
+	"error/serviceUnavailable": "Erro, o serviço não está disponível.",
+	"error/serviceNotConfigured": "Erro o serviço não está configurado."
 }

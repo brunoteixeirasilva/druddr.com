@@ -31,10 +31,14 @@
 	"label/users": "Users",
 	"label/comments": "Comments",
 	"label/pets": "Pets",
+	"label/messageModal": "Hi im a modal",
 	"messageType/title/success": "Success!",
 	"messageType/title/error": "Error",
 	"messageType/title/warning": "Warning",
 	"messageType/title/info": "Info",
 	"title/app": "Druddr",
-	"title/author": "Bruno Teixeira"
+	"title/author": "Bruno Teixeira",
+	"error/general": "Critical error.",
+	"error/serviceUnavailable": "Error the service is unavaiable.",
+	"error/serviceNotConfigured": "Error the service is not configured."
 }

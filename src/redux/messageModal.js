@@ -20,8 +20,11 @@ export const messageModalSlice = createSlice({
 			state.type = action.payload.type
 		},
 		close: (state) => {
-			state.text = initialState.text
 			state.open = initialState.open
+		},
+		reset: (state) => {
+			state.open = initialState.open
+			state.text = initialState.text
 			state.type = initialState.type
 		},
 	},
@@ -39,6 +42,6 @@ export const selectMessageModalType = (state) =>
 	selectMessageModalState(state).type
 
 // Action creators are generated for each case reducer function
-export const { open, close } = messageModalSlice.actions
+export const { open, close, reset } = messageModalSlice.actions
 
 export default messageModalSlice.reducer

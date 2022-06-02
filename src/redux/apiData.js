@@ -1,13 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { API } from 'utils/api'
+import { BackBone } from 'utils/api'
+
+const initialState = {
+	selectedApi: 'pets',
+	data: null,
+}
 
 export const apiDataSlice = createSlice({
 	name: 'apiData',
-	initialState: {
-		selectedApi: API.default.key,
-		data: null,
-	},
+	initialState,
 	reducers: {
 		changeApi: (state, action) => {
 			// Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -17,7 +19,7 @@ export const apiDataSlice = createSlice({
 			state.selectedApi = action.payload
 		},
 		reset: (state, action) => {
-			state.selectedApi = API.default.key
+			state.selectedApi = BackBone.default.key
 		},
 		setData: (state, action) => {
 			state.data = action.payload

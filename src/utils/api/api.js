@@ -1,29 +1,41 @@
 import { PetService } from 'services/PetService'
+import { ApiService } from 'services/ApiService'
+import { MessageModalService } from 'services/MessageModalService'
 
-const API = {
-	movies: {
-		key: 'movies',
+const BackBone = {
+	api: null,
+	comments: {
+		key: 'comments',
 		service: null,
 	},
-	tokens: {
-		key: 'tokens',
+	movies: {
+		key: 'movies',
 		service: null,
 	},
 	pets: {
 		key: 'pets',
 		service: new PetService(),
 	},
+	tokens: {
+		key: 'tokens',
+		service: null,
+	},
 	users: {
 		key: 'users',
 		service: null,
 	},
-	comments: {
-		key: 'comments',
-		service: null,
+	messageModal: {
+		key: 'messageModal',
+		service: new MessageModalService(),
 	},
 	default: null,
 }
 
-API.default = API.pets
+BackBone.api = {
+	key: 'api',
+	service: () => new ApiService(BackBone),
+}
 
-export { API }
+BackBone.default = BackBone.pets
+
+export { BackBone }

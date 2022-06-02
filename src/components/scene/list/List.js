@@ -3,13 +3,11 @@ import Button from '@material-ui/core/Button'
 
 import { useSelector, useDispatch } from 'react-redux'
 
-import ApiDropdown from '../../dropdown/calls/ApiDropdown'
+import ApiDropdown from 'components/dropdown/calls/ApiDropdown'
 import ComponentMap from 'constants/componentMap'
 import { CloseButton } from '../../button'
 import { routes } from 'utils/routes'
-import { API } from 'utils/api'
-
-import { setData } from 'redux/apiData'
+import { BackBone } from 'utils/api'
 
 /**
  * API page
@@ -26,18 +24,17 @@ function List() {
 	const dispatch = useDispatch()
 	const selectedApi = useSelector((s) => s.apiData.selectedApi)
 	const data = useSelector((s) => s.apiData.data)
-	const ServiceWrapper = useMemo(() => API[selectedApi], [selectedApi])
+	// const apiService = useMemo(() => BackBone.api.service, [])
 
-	const onClick = useCallback(async () => {
-		ServiceWrapper.service.get().then((d) => {
-			debugger
-			return dispatch(setData({ data: d }))
-		})
-	}, [ServiceWrapper])
+	const apiCall = useCallback(async () => {
+		BackBone.api.service().requestData(selectedApi)
+	}, [selectedApi])
 
 	useEffect(() => {
 		if (!!data) {
-			alert('Hey, I have data. Please, check the browser logs.')
+			BackBone.messageModal.service.info(
+				'Hey, I have data. Please, check the browser logs.'
+			)
 			console.log('API Retrieved data')
 			console.log(data)
 		}
@@ -59,7 +56,7 @@ function List() {
 					variant="contained"
 					data-cy={ComponentMap.fetchButton}
 					color="primary"
-					onClick={onClick}
+					onClick={apiCall}
 				>
 					Fetch
 				</Button>

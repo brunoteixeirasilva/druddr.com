@@ -1,3 +1,3 @@
 import ComponentMap from './componentMap'
-
-export { ComponentMap }
+import { ErrorCodeMap } from './ErrorCodeMap'
+export { ComponentMap, ErrorCodeMap }

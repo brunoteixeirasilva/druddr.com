@@ -7,7 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 
 // Service imports
-import { MessageModalService } from 'services/MessageModalService'
+import { BackBone } from 'utils/api'
 
 // Utilities import
 import { translate } from 'utils/lang'
@@ -52,7 +52,7 @@ export function MessageModal({
 	}, [type])
 
 	async function onClose() {
-		new MessageModalService().close()
+		BackBone.messageModal.service.close()
 		// TODO: Dispatch a state change to force MessageModel to close
 	}
 
