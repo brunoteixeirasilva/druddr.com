@@ -1,4 +1,5 @@
 import { ServiceBase } from 'services/base'
+import { PetTransformer } from 'transformers/PetTransformer'
 
 /**
  * Service class for consuming Pet microservice
@@ -6,7 +7,7 @@ import { ServiceBase } from 'services/base'
  */
 class PetService extends ServiceBase {
 	constructor() {
-		super('pet')
+		super('pet', PetTransformer)
 	}
 }
 

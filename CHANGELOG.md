@@ -62,6 +62,7 @@
     -   Dispatcher
     -   Reducer
     -   Selector
+-   [DONE][0.5h] Add observation of forced language reloading => remount App component from useEffect
 
 ### 27/4/2022 - React Session #6 [DONE]
 
@@ -104,7 +105,7 @@
 -   [DONE] Message modal opener function with message and type (service objects)
     -   [DONE] Should depict errors and display an show error message => action dispatch
 
-### DD/MM/2022 - React Session #9 [TODO]
+### 26/05/2022 - React Session #9 [DONE]
 
 ### Changes Done
 
@@ -124,12 +125,30 @@
 -   [DONE] Creation of ErrorCodeMap for error dictionary.
 -   [DONE] Changes to List.js to handle new API call function.
 
-### DD/MM/2022 - React Session #10 [TODO]
+### 02/06/2022 - React Session #10 [DONE]
+
+### Changes Applied
+
+-   [DONE][1.2h] Create the class mappers
+    -   [DONE][0.6h] Map the classes used for Pet - Data transformation
+    -   [DONE][0.5h] Maps the response from the service into meaningful objects.
+    -   [DONE][0.1h] Test the response transformation.
+
+### DD/MM/2022 - Architecture Session #1 [TODO]
 
 ### Changes Planned
 
--   [TODO] Create a table do display data from the dropdown
--   [TODO] Create a new dropdown for displaying the `apiData.data` list state portion
+-   [TODO] Create a table to display data from the dropdown
+    -   [TODO] TODO Create a base type for the table's columns.
+        -   A class which can be instantiated and formats the input for a rendering table.
+    -   [TODO] Implement the reusable table
+        -   Component which receives collection of columns (class type).
+        -   Renders a Material UI table.
+-   [TODO] Develop Wrapper component which declares the columns of each service type
+    -   Start by "pet".
+    -   Configures pet columns.
+    -   Renders a Table component injecting the columns mapped.
 -   [TODO] Adding class for lazy loading services (LazyInjectableService)
 -   [TODO] Adding class for injectable services (InjectableService)
--   [TODO] Add observation of forced language reloading => remount App component from useEffect
+-   [TODO] Create a new dropdown for displaying the `apiData.data` list state portion
+-   [TODO] Create separate druddr models project for consuming on frontend

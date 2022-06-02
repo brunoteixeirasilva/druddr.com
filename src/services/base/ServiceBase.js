@@ -33,9 +33,11 @@ class ServiceBase {
 	baseURL = routes.services.url
 	serviceURL = ''
 	authToken = null
+	transformerType = null
 
-	constructor(serviceURL = '') {
+	constructor(serviceURL = '', transformerType = null) {
 		this.serviceURL = `${servicePrefix}/${serviceURL}`
+		this.transformerType = transformerType
 	}
 
 	withToken(token) {
@@ -77,6 +79,8 @@ class ServiceBase {
 		// in case an entry ID is specified
 		const resolvedSuffix = !!entryId ? `/${entryId}` : ''
 
+		const dataProcessor = this.transformerType
+
 		return fetch(
 			`${slashLessBaseUrl}/${slashLessServiceUrl}${resolvedSuffix}`,
 			requestOptions
@@ -90,7 +94,12 @@ class ServiceBase {
 
 				if (jsonObject.error) throw Error(jsonObject)
 
-				return jsonObject.data // something returned successfully
+				debugger
+
+				// something returned successfully, processing in case of tranformer existing
+				return !dataProcessor
+					? jsonObject.data
+					: new dataProcessor(jsonObject.data).processedData
 			})
 			.catch((ex) => {
 				let resultantObject = null

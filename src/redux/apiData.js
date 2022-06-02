@@ -30,4 +30,10 @@ export const apiDataSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { changeApi, reset, setData } = apiDataSlice.actions
 
+export const selectObject = (state) => state.apiData
+
+export const selectSelectedApi = (state) => selectObject(state).selectedApi
+
+export const selectApiData = (state) => selectObject(state).data
+
 export default apiDataSlice.reducer

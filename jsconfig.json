@@ -6,8 +6,10 @@
 			"@constants/*": ["./constants/*"],
 			"@components/*": ["./components/*"],
 			"@i18n/*": ["./i18n/*"],
+			"@models/*": ["./models/*"],
 			"@redux/*": ["./redux/*"],
 			"@services/*": ["./services/*"],
+			"@transformers/*": ["./transformers/*"],
 			"@utils/*": ["./utils/*"]
 		},
 		"sourceMap": true,
