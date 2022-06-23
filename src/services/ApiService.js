@@ -28,9 +28,18 @@ export class ApiService extends ReduxService {
 			if (!ServiceWrapper.service)
 				throw Error(ErrorCodeMap.ServiceUnavailable)
 
-			return ServiceWrapper.service.get().then((d) => {
-				return this.dispatch(setData({ data: d }))
-			})
+			if (
+				ServiceWrapper.service.create === undefined ||
+				typeof ServiceWrapper.service.create !== 'function'
+			)
+				throw Error(ErrorCodeMap.ServiceShouldBeLazyInjectable)
+
+			return ServiceWrapper.service
+				.create()
+				.get()
+				.then((d) => {
+					return this.dispatch(setData({ data: d }))
+				})
 		} catch (ex) {
 			return this.captureException(ex)
 		}

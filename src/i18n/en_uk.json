@@ -39,6 +39,7 @@
 	"title/app": "Druddr",
 	"title/author": "Bruno Teixeira",
 	"error/general": "Critical error.",
-	"error/serviceUnavailable": "Error the service is unavaiable.",
-	"error/serviceNotConfigured": "Error the service is not configured."
+	"error/serviceUnavailable": "Error, the service is unavaiable.",
+	"error/serviceNotConfigured": "Error, the service is not configured.",
+	"error/serviceShouldBeLazyInjectable": "Error, the service should be LazyInjectableService."
 }

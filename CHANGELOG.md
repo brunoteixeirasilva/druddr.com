@@ -134,7 +134,25 @@
     -   [DONE][0.5h] Maps the response from the service into meaningful objects.
     -   [DONE][0.1h] Test the response transformation.
 
-### DD/MM/2022 - Architecture Session #1 [TODO]
+### 16/06/2022 - Architecture Session #1 Part 1 [DONE]
+
+### Changes Applied
+
+-   [DONE] Adding class for injectable services (InjectableService)
+    -   [DONE] Create interface/abstract class for typing
+    -   [DONE] From the interface, expected to have a minimal "shape"
+-   [DONE] Adding class for lazy loading services (LazyInjectableService)
+    -   [DONE] Create interface/abstract class for typing
+    -   [DONE] Re-using existing functionalities
+    -   [DONE] Add `get` method which returns the service instance on call
+
+### DD/MM/2022 - Architecture Session #1 Part 2 [TODO]
+
+### Changes Planned
+
+-   [TODO] Proper develop our ServiceBus concept
+
+### DD/MM/2022 - Architecture Session #2 [TODO]
 
 ### Changes Planned
 
@@ -148,7 +166,5 @@
     -   Start by "pet".
     -   Configures pet columns.
     -   Renders a Table component injecting the columns mapped.
--   [TODO] Adding class for lazy loading services (LazyInjectableService)
--   [TODO] Adding class for injectable services (InjectableService)
 -   [TODO] Create a new dropdown for displaying the `apiData.data` list state portion
 -   [TODO] Create separate druddr models project for consuming on frontend

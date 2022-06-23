@@ -1,3 +1,5 @@
+import { LazyInjectableService } from 'services/base/LazyInjectableService'
+
 import { PetService } from 'services/PetService'
 import { ApiService } from 'services/ApiService'
 import { MessageModalService } from 'services/MessageModalService'
@@ -14,7 +16,8 @@ const BackBone = {
 	},
 	pets: {
 		key: 'pets',
-		service: new PetService(),
+		service: new LazyInjectableService(PetService),
+		// service: new PetService(),
 	},
 	tokens: {
 		key: 'tokens',

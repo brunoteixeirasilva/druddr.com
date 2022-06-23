@@ -40,5 +40,6 @@
 	"title/author": "Bruno Teixeira",
 	"error/general": "Erro crítico.",
 	"error/serviceUnavailable": "Erro, o serviço não está disponível.",
-	"error/serviceNotConfigured": "Erro o serviço não está configurado."
+	"error/serviceNotConfigured": "Erro, o serviço não está configurado.",
+	"error/service-should-be-lazy-injectable": "Erro, o serviço deveria ser LazyInjectableService."
 }
