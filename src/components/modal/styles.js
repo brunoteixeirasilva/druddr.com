@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 /**
- * Styles for Modal
+ * Styles for system-wide Modal
  */
 function useStyles() {
 	return makeStyles((theme) => ({
@@ -27,7 +27,8 @@ function useStyles() {
 		},
 		modalContent: {
 			height: 'auto',
-			minHeight: 200,
+			minHeight: 150,
+			color: 'red',
 		},
 	}))()
 }

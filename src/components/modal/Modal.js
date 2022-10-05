@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Modal as MaterialUiModal, Backdrop, Paper } from '@material-ui/core'
 import { useStyles } from './styles'
 import ModalTitle from './title/ModalTitle'
+import { ModalText } from './text/ModalText'
 
 /**
  * Modal for cross-system usage
@@ -25,7 +26,7 @@ function Modal(props) {
 		>
 			<Paper className={classes.modal} elevation={2}>
 				<ModalTitle className={classes.ModalTitle} text={title} />
-				<div className={classes.modalContent}>{children}</div>
+				<ModalText>{children}</ModalText>
 			</Paper>
 		</MaterialUiModal>
 	)
