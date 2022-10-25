@@ -4,6 +4,7 @@ import { Modal as MaterialUiModal, Backdrop, Paper } from '@material-ui/core'
 import { useStyles } from './styles'
 import ModalTitle from './title/ModalTitle'
 import { ModalText } from './text/ModalText'
+import ModalFooter from './footer/ModalFooter'
 
 /**
  * Modal for cross-system usage
@@ -27,6 +28,12 @@ function Modal(props) {
 			<Paper className={classes.modal} elevation={2}>
 				<ModalTitle className={classes.ModalTitle} text={title} />
 				<ModalText>{children}</ModalText>
+				<ModalFooter
+					controls={[
+						{ text: 'Close', onClick: onClose },
+						{ text: 'Hello', onClick: onClose },
+					]}
+				/>
 			</Paper>
 		</MaterialUiModal>
 	)
