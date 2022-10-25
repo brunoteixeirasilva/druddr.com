@@ -18,6 +18,10 @@ function useStyles() {
 			width: 480,
 			margin: 'auto',
 			padding: theme.spacing(3),
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'flex-start',
+			justifyContent: 'center',
 		},
 		modalTitle: {
 			margin: 0,

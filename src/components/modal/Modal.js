@@ -30,8 +30,17 @@ function Modal(props) {
 				<ModalText>{children}</ModalText>
 				<ModalFooter
 					controls={[
-						{ text: 'Close', onClick: onClose },
-						{ text: 'Hello', onClick: onClose },
+						{
+							text: 'Open Google',
+							color: 'primary',
+							onClick: () =>
+								window.open('https://google.com', '_blank'),
+						},
+						{
+							text: 'Close',
+							onClick: onClose,
+							color: 'secondary',
+						},
 					]}
 				/>
 			</Paper>
