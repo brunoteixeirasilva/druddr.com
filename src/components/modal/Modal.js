@@ -5,6 +5,8 @@ import { useStyles } from './styles'
 import ModalTitle from './title/ModalTitle'
 import { ModalText } from './text/ModalText'
 import ModalFooter from './footer/ModalFooter'
+import { CloseButton } from 'components/button/index'
+import ComponentMap from 'constants/componentMap'
 
 /**
  * Modal for cross-system usage
@@ -27,6 +29,12 @@ function Modal(props) {
 		>
 			<Paper className={classes.modal} elevation={2}>
 				<ModalTitle className={classes.ModalTitle} text={title} />
+				{/* TODO: Add the cross close icon to the right top corner */}
+				{/* <CloseButton
+					dataCy={ComponentMap.closeButton}
+					buttonColor="primary"
+					onClick={() => alert('it works')}
+				/> */}
 				<ModalText>{children}</ModalText>
 				<ModalFooter
 					controls={[
